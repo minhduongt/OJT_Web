@@ -8,10 +8,6 @@ const MainNav = () => {
         paddingX: "100px",
         justifyContent: "space-between",
         minHeight: "120px",
-        border: "solid",
-        borderColor: "#000000",
-        borderWidth: "1px",
-        boxShadow: "0px 4px 4px 0px #00000040",
         alignItems: "center",
       }}
     >
