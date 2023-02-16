@@ -49,6 +49,7 @@ const LandingPage = () => {
             lineHeight={"144px"}
             fontSize={"120px"}
             color="#022C59"
+            fontFamily={"Dela Gothic One"}
           >
             Tìm kiếm công việc phù hợp với bạn
           </Typography>
@@ -327,7 +328,7 @@ const LandingPage = () => {
           DOANH NGHIỆP LIÊN KẾT
         </Typography>
       </Stack>
-      <Stack alignItems={"center"}>
+      <Stack mb={"-400px"} alignItems={"center"}>
         <Typography
           lineHeight={"150%"}
           paddingTop="90px"
@@ -336,10 +337,152 @@ const LandingPage = () => {
           fontSize="30px"
           maxWidth="1500px"
           fontFamily={"SVN-Gilroy"}
+          fontStyle="normal"
         >
           Liên kết hơn 40 doanh nghiệp, tạo cơ hội tìm kiếm công việc thực tập
           cho sinh viên FPT
         </Typography>
+
+        <Stack paddingTop={"80px"} direction={"row"} spacing={4}>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company3.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company4.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company5.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company6.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company7.png)` }}
+            backgroundColor="white"
+          ></Box>
+        </Stack>
+        <Stack pt="20px" direction={"row"} spacing={4}>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company8.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company9.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/compnay10.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company11.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company12.png)` }}
+            backgroundColor="white"
+          ></Box>
+        </Stack>
+        <Stack pt="20px" direction={"row"} spacing={4}>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company13.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
+            backgroundColor="white"
+          ></Box>
+          <Box
+            borderRadius={"20px"}
+            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+            width="180px"
+            height="80px"
+            component="span"
+            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
+            backgroundColor="white"
+          ></Box>
+        </Stack>
       </Stack>
       <Stack minHeight={"470px"}></Stack>
       {/* Section 5--------- */}
@@ -368,6 +511,8 @@ const LandingPage = () => {
         color="#022C59"
         fontSize="70px"
         lineHeight={"130%"}
+        fontFamily="Dela Gothic One"
+        fontWeight="400"
       >
         Nhóm
       </Typography>
@@ -376,6 +521,7 @@ const LandingPage = () => {
         paddingTop="80px"
         direction="row"
         paddingX="210px"
+        paddingBottom={"200px"}
       >
         <Stack
           width={"420px"}
