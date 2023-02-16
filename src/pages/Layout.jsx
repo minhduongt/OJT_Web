@@ -11,7 +11,7 @@ const Layout = () => {
         <Container
           maxWidth="xl"
           sx={{
-            backgroundImage: `url(../src/assets/landingPageBg.png)`,
+            backgroundImage: `url(assets/landingPageBg.png)`,
             minHeight: "4661px",
             padding: "0",
           }}
