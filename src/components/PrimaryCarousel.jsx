@@ -60,7 +60,7 @@ export default function PrimaryCarousel() {
               h={"835px"}
               w={"568px"}
               objectFit={"cover"}
-              src={"src/assets/slidercenter.png"}
+              src={"../assets/slidercenter.png"}
               alignSelf="center"
             />
             <img
@@ -68,7 +68,7 @@ export default function PrimaryCarousel() {
               h={"835px"}
               w={"568px"}
               objectFit={"cover"}
-              src={"src/assets/slider1.png"}
+              src={"../assets/slider1.png"}
               alignSelf="center"
             />
           </Stack>

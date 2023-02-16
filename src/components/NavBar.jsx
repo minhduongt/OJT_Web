@@ -9,6 +9,10 @@ const MainNav = () => {
         justifyContent: "space-between",
         minHeight: "120px",
         alignItems: "center",
+        border: "solid",
+        borderColor: "#000000",
+        borderWidth: "1px",
+        boxShadow: "0px 4px 4px 0px #00000040",
       }}
     >
       <Stack
@@ -20,7 +24,7 @@ const MainNav = () => {
         direction={"row"}
       >
         <img
-          src={`src/assets/Logo.png`}
+          src={"/assets/Logo.png"}
           alt={"Logo"}
           loading="lazy"
           width={"70px"}
@@ -80,6 +84,7 @@ const MainNav = () => {
           </Link>
         </Stack>
         <Stack
+          spacing={1.5}
           direction={"row"}
           sx={{
             paddingLeft: "50px",
@@ -90,14 +95,14 @@ const MainNav = () => {
           }}
         >
           <img
-            src={`src/assets/ringbellfixed.png`}
+            src={"/assets/ringbellfixed.png"}
             alt={"Logo"}
             loading="lazy"
             width={"44px"}
             height="44px"
           />
           <img
-            src={`src/assets/currentUser.png`}
+            src={"/assets/currentUser.png"}
             alt={"Logo"}
             loading="lazy"
             width={"60px"}

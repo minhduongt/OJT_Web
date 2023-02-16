@@ -1,7 +1,7 @@
 //fonts
-import DelaGothicOne from "../fonts/DelaGothicOne-Regular.ttf";
-import SVNGilroy_Bold from "../fonts/SVNGilroy_Bold.woff";
-import SVNGilroy_Light from "../fonts/SVNGilroy_Light.woff";
+import DelaGothicOneRegular from "../fonts/DelaGothicOne-Regular.ttf";
+import SVNGilroyBold from "../fonts/SVNGilroy_Bold.woff";
+import SVNGilroyLight from "../fonts/SVNGilroy_Light.woff";
 //
 import { createTheme } from "@mui/material";
 
@@ -11,7 +11,7 @@ const DelaGothicOne = {
   fontDisplay: "swap",
   fontWeight: 400,
   src: `
-  url(${DelaGothicOne}) format('truetype')`,
+  url(${DelaGothicOneRegular}) format('truetype')`,
   unicodeRange:
     "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",
 };
@@ -24,7 +24,7 @@ const SVNGilroy_Light = {
   src: `
     local('SVN-Gilroy'),
     local('Raleway-Bold'),
-    url(${SVNGilroy_Light}) format('woff2')`,
+    url(${SVNGilroyLight}) format('woff2')`,
   unicodeRange:
     "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",
 };
@@ -37,7 +37,7 @@ const SVNGilroy_Bold = {
   src: `
     local('Raleway'),
     local('Raleway-Bold'),
-    url(${SVNGilroy_Bold}) format('woff2')
+    url(${SVNGilroyBold}) format('woff2')
   `,
   unicodeRange:
     "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",

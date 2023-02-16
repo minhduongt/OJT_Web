@@ -8,6 +8,75 @@ import {
 } from "@mui/material";
 import PrimaryCarousel from "../components/PrimaryCarousel";
 
+const CompanyList1 = [
+  {
+    name: "schaeffler",
+    picurl: "/assets/schaeffler.png",
+  },
+  {
+    name: "unicloud",
+    picurl: "/assets/unicloud.png",
+  },
+  {
+    name: "smartland",
+    picurl: "/assets/smartland.png",
+  },
+  {
+    name: "luckytech",
+    picurl: "/assets/luckytech.png",
+  },
+  {
+    name: "bestb",
+    picurl: "/assets/bestb.png",
+  },
+  {
+    name: "elca",
+    picurl: "/assets/elca.png",
+  },
+];
+
+const CompanyList2 = [
+  {
+    name: "netcompany",
+    picurl: "/assets/netcompany.png",
+  },
+  {
+    name: "renaissance",
+    picurl: "/assets/renaissance.png",
+  },
+  {
+    name: "geek",
+    picurl: "/assets/geek.png",
+  },
+  {
+    name: "manulife",
+    picurl: "/assets/manulife.png",
+  },
+  {
+    name: "smartpay",
+    picurl: "/assets/smartpay.png",
+  },
+];
+
+const CompanyList3 = [
+  {
+    name: "major",
+    picurl: "/assets/major.png",
+  },
+  {
+    name: "fpts",
+    picurl: "/assets/fpts.png",
+  },
+  {
+    name: "kms",
+    picurl: "/assets/kms.png",
+  },
+  {
+    name: "cattiensa",
+    picurl: "/assets/cattiensa.png",
+  },
+];
+
 const LandingPage = () => {
   return (
     <>
@@ -35,7 +104,7 @@ const LandingPage = () => {
         sx={{
           marginTop: "200px",
           height: "755px",
-          backgroundImage: `url(src/assets/fptu.png)`,
+          backgroundImage: `url(assets/fptu.png)`,
         }}
       >
         <Stack
@@ -222,7 +291,7 @@ const LandingPage = () => {
       >
         <Stack alignItems={"center"}>
           <img
-            src={`src/assets/feature1.png`}
+            src={`/assets/feature1.png`}
             alt={"Logo"}
             loading="lazy"
             width={"110px"}
@@ -250,7 +319,7 @@ const LandingPage = () => {
         </Stack>
         <Stack alignItems={"center"}>
           <img
-            src={`src/assets/feature2.png`}
+            src={`/assets/feature2.png`}
             alt={"Logo"}
             loading="lazy"
             width={"110px"}
@@ -279,7 +348,7 @@ const LandingPage = () => {
         </Stack>
         <Stack alignItems={"center"}>
           <img
-            src={`src/assets/feature3.png`}
+            src={`/assets/feature3.png`}
             alt={"Logo"}
             loading="lazy"
             width={"110px"}
@@ -344,144 +413,46 @@ const LandingPage = () => {
         </Typography>
 
         <Stack paddingTop={"80px"} direction={"row"} spacing={4}>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company3.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company4.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company5.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company6.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company7.png)` }}
-            backgroundColor="white"
-          ></Box>
+          {CompanyList1.map((com) => {
+            return (
+              <Box
+                borderRadius={"20px"}
+                boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+                width="180px"
+                height="80px"
+                sx={{ backgroundImage: `url(${com.picurl})` }}
+                backgroundColor="white"
+              />
+            );
+          })}
         </Stack>
         <Stack pt="20px" direction={"row"} spacing={4}>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company8.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company9.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/compnay10.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company11.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company12.png)` }}
-            backgroundColor="white"
-          ></Box>
+          {CompanyList2.map((com) => {
+            return (
+              <Box
+                borderRadius={"20px"}
+                boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+                width="180px"
+                height="80px"
+                sx={{ backgroundImage: `url(${com.picurl})` }}
+                backgroundColor="white"
+              />
+            );
+          })}
         </Stack>
         <Stack pt="20px" direction={"row"} spacing={4}>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company13.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
-            backgroundColor="white"
-          ></Box>
-          <Box
-            borderRadius={"20px"}
-            boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
-            width="180px"
-            height="80px"
-            component="span"
-            sx={{ backgroundImage: `url(src/assets/company2.png)` }}
-            backgroundColor="white"
-          ></Box>
+          {CompanyList3.map((com) => {
+            return (
+              <Box
+                borderRadius={"20px"}
+                boxShadow={"0px 0px 20px 1px rgba(255, 70, 1, 0.15)"}
+                width="180px"
+                height="80px"
+                sx={{ backgroundImage: `url(${com.picurl})` }}
+                backgroundColor="white"
+              />
+            );
+          })}
         </Stack>
       </Stack>
       <Stack minHeight={"470px"}></Stack>
@@ -532,7 +503,7 @@ const LandingPage = () => {
           <Avatar
             sx={{ width: "180px", height: "180px" }}
             alt="HuynhDangKhoi"
-            src="src/assets/huynhdangkhoi.png"
+            src="../assets/huynhdangkhoi.png"
           />
           <Stack>
             <Typography
@@ -557,7 +528,7 @@ const LandingPage = () => {
           <Avatar
             sx={{ width: "180px", height: "180px" }}
             alt="HuynhDangKhoi"
-            src="src/assets/nguyenquetran.png"
+            src="../assets/nguyenquetran.png"
           />
           <Stack>
             <Typography
@@ -583,7 +554,7 @@ const LandingPage = () => {
           <Avatar
             sx={{ width: "180px", height: "180px" }}
             alt="HuynhDangKhoi"
-            src="src/assets/nguyenquockhanh.png"
+            src="../assets/nguyenquockhanh.png"
           />
           <Stack>
             <Typography
