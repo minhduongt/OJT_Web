@@ -1,4 +1,47 @@
+//fonts
+import DelaGothicOne from "../fonts/DelaGothicOne-Regular.ttf";
+import SVNGilroy_Bold from "../fonts/SVNGilroy_Bold.woff";
+import SVNGilroy_Light from "../fonts/SVNGilroy_Light.woff";
+//
 import { createTheme } from "@mui/material";
+
+const DelaGothicOne = {
+  fontFamily: "Dela Gothic One",
+  fontStyle: "normal",
+  fontDisplay: "swap",
+  fontWeight: 400,
+  src: `
+  url(${DelaGothicOne}) format('truetype')`,
+  unicodeRange:
+    "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",
+};
+
+const SVNGilroy_Light = {
+  fontFamily: "SVN-Gilroy",
+  fontStyle: "normal",
+  fontDisplay: "swap",
+  fontWeight: 400,
+  src: `
+    local('SVN-Gilroy'),
+    local('Raleway-Bold'),
+    url(${SVNGilroy_Light}) format('woff2')`,
+  unicodeRange:
+    "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",
+};
+
+const SVNGilroy_Bold = {
+  fontFamily: "SVN-Gilroy",
+  fontStyle: "normal",
+  fontDisplay: "swap",
+  fontWeight: 600,
+  src: `
+    local('Raleway'),
+    local('Raleway-Bold'),
+    url(${SVNGilroy_Bold}) format('woff2')
+  `,
+  unicodeRange:
+    "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF UTF-8",
+};
 
 const theme = createTheme({
   typography: {
@@ -12,6 +55,13 @@ const theme = createTheme({
       lg: "1024px",
       xl: "1920px",
       "2xl": "2560px",
+    },
+  },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        "@font-face": [DelaGothicOne, SVNGilroy_Light, SVNGilroy_Bold],
+      },
     },
   },
 });

@@ -335,6 +335,7 @@ const LandingPage = () => {
           fontWeight="600"
           fontSize="30px"
           maxWidth="1500px"
+          fontFamily={"SVN-Gilroy"}
         >
           Liên kết hơn 40 doanh nghiệp, tạo cơ hội tìm kiếm công việc thực tập
           cho sinh viên FPT
