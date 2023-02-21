@@ -7,16 +7,45 @@ import LoginPage from "../pages/Login";
 import ProfilePage from "../pages/Profile";
 import LandingPage from "../pages/LandingPage";
 import Page404 from "../pages/Page404";
+import Layout from "../pages/Layout";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <LandingPage />
+          </Layout>
+        }
+      />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/apply" element={<ApplyPage />} />
+      <Route
+        path="/apply"
+        element={
+          <Layout>
+            <ApplyPage />
+          </Layout>
+        }
+      />
       <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/jobs" element={<JobsPage />} />
-      <Route path="/companies" element={<CompaniesPage />} />
+      <Route
+        path="/jobs"
+        element={
+          <Layout>
+            <JobsPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/companies"
+        element={
+          <Layout>
+            <CompaniesPage />
+          </Layout>
+        }
+      />
       <Route path="/404" element={<Page404 />} />
       <Route path="*" element={<Navigate to="/404" />} />
     </Routes>

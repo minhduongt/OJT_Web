@@ -4,23 +4,21 @@ import MainNav from "../components/NavBar";
 import MainFooter from "../components/Footer";
 import Router from "../routes";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <>
-      <BrowserRouter>
-        <Container
-          maxWidth="xl"
-          sx={{
-            backgroundImage: `url(assets/landingPageBg.png)`,
-            minHeight: "4661px",
-            padding: "0",
-          }}
-        >
-          <MainNav />
-          <Router />
-        </Container>
-        <MainFooter />
-      </BrowserRouter>
+      <MainNav />
+      <Container
+        maxWidth="xl"
+        sx={{
+          backgroundImage: `url(assets/landingPageBg.png)`,
+          minHeight: "4661px",
+          padding: "0",
+        }}
+      >
+        {children}
+      </Container>
+      <MainFooter />
     </>
   );
 };
