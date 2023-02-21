@@ -87,10 +87,12 @@ const LandingPage = () => {
           color="#FF4601"
           fontSize={"36px"}
           fontWeight={400}
+          height="40px"
         >
           TRANG CHỦ
         </Typography>
         <Box
+          height="40px"
           sx={{
             marginLeft: "59px",
             width: "1390px",
@@ -144,9 +146,9 @@ const LandingPage = () => {
             width: "1360px",
             height: "200px",
             backgroundColor: "#FFFFFF",
-            border: "solid",
-            borderColor: "#FF4601",
-            borderWidth: "4px",
+            // border: "solid",
+            // borderColor: "#FF4601",
+            // borderWidth: "4px",
             top: "250px",
           }}
         >
@@ -223,7 +225,7 @@ const LandingPage = () => {
         </Container>
       </Container>
       {/* Section 2--------- */}
-      <Stack direction={"row"} sx={{ paddingTop: "120px", paddingX: "100px" }}>
+      <Stack direction={"row"} sx={{ paddingTop: "247px", paddingX: "100px" }}>
         <Box
           sx={{
             marginRight: "59px",
@@ -232,19 +234,20 @@ const LandingPage = () => {
             borderColor: "#FF46014D",
             borderWidth: "2px",
           }}
+          height="40px"
         />
         <Typography
-          paddingTop="100px"
           minWidth="550px"
           color="#FF4601"
           fontSize={"36px"}
           fontWeight={400}
           textAlign="end"
+          height="40px"
         >
           TỔNG QUAN GIAO DIỆN
         </Typography>
       </Stack>
-      <Stack alignItems={"center"}>
+      <Stack alignItems={"center"} width="1900px">
         <Typography
           paddingTop="90px"
           paddingX={"210px"}
@@ -252,7 +255,7 @@ const LandingPage = () => {
           fontWeight="600"
           fontSize="30px"
           lineHeight={"150%"}
-          maxWidth="1500px"
+          fontFamily={"SVN-Gilroy"}
         >
           Hiểu rõ nhu cầu tìm công việc thực tập của sinh viên trường F, giao
           diện mới ra đời nhằm mang đến trải nghiệm tốt hơn, tạo cơ hội cho các
@@ -260,7 +263,9 @@ const LandingPage = () => {
           phù hợp với bản thân.
         </Typography>
       </Stack>
-      <Stack minHeight="690px">{/* <PrimaryCarousel /> */}</Stack>
+      <Container minHeight="690px">
+        <PrimaryCarousel />
+      </Container>
 
       {/* Section 3--------- */}
       <Stack direction={"row"} sx={{ paddingTop: "120px", paddingX: "100px" }}>
@@ -385,6 +390,7 @@ const LandingPage = () => {
             borderColor: "#FF46014D",
             borderWidth: "2px",
           }}
+          height="40px"
         />
         <Typography
           paddingTop="100px"
@@ -393,6 +399,7 @@ const LandingPage = () => {
           fontSize={"36px"}
           fontWeight={400}
           textAlign="end"
+          height="40px"
         >
           DOANH NGHIỆP LIÊN KẾT
         </Typography>
@@ -463,10 +470,12 @@ const LandingPage = () => {
           color="#FF4601"
           fontSize={"36px"}
           fontWeight={400}
+          height="40px"
         >
           VỀ CHÚNG MÌNH
         </Typography>
         <Box
+          height="40px"
           sx={{
             marginLeft: "59px",
             width: "1390px",

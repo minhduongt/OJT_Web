@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useState } from "react";
 import "./App.css";
 import Layout from "./pages/Layout";
@@ -6,7 +7,7 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <>
+    <Box className="App">
       <Layout />
 
       {/* <div>
@@ -29,7 +30,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-    </>
+    </Box>
   );
 }
 
