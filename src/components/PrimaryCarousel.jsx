@@ -52,7 +52,7 @@ export default function PrimaryCarousel() {
     },
   };
   return (
-    <Box>
+    <Box overflow={"hidden"}>
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -68,7 +68,7 @@ export default function PrimaryCarousel() {
 
       {/* Slider */}
 
-      <Box pt="30px" pl={"200px"} pr="300px" width="2000px">
+      <Box pt="30px" pl={"200px"} pr="430px" width="2000px" overflow={"hidden"}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {imgList.map((img, idx) => {
             return (

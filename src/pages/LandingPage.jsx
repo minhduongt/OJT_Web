@@ -116,6 +116,7 @@ const LandingPage = () => {
           sx={{ position: "relative", bottom: "100px" }}
         >
           <Typography
+            width={"1500px"}
             height={"272px"}
             lineHeight={"144px"}
             fontSize={"120px"}
@@ -247,7 +248,7 @@ const LandingPage = () => {
           TỔNG QUAN GIAO DIỆN
         </Typography>
       </Stack>
-      <Stack alignItems={"center"} width="1900px">
+      <Stack alignItems={"center"} width="100%">
         <Typography
           paddingTop="90px"
           paddingX={"210px"}

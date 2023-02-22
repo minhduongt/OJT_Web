@@ -136,9 +136,9 @@ const MainFooter = () => {
                 borderRadius: "40px",
                 backgroundColor: "#E5EBF2",
                 fontFamily: "SVN-Gilroy",
+                px: "30px",
               }}
               placeholder="sample@fpt.edu.vn"
-              inputProps={{ "aria-label": "search google maps" }}
             />
 
             <Button

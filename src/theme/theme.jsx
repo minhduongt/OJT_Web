@@ -8,7 +8,6 @@ import { createTheme } from "@mui/material";
 const DelaGothicOne = {
   fontFamily: "Dela Gothic One",
   fontStyle: "normal",
-  fontDisplay: "swap",
   fontWeight: 400,
   src: `
   url(${DelaGothicOneRegular}) format('truetype')`,
@@ -19,7 +18,6 @@ const DelaGothicOne = {
 const SVNGilroy_Light = {
   fontFamily: "SVN-Gilroy",
   fontStyle: "normal",
-  fontDisplay: "swap",
   fontWeight: 400,
   src: `
     local('SVN-Gilroy'),
@@ -32,7 +30,6 @@ const SVNGilroy_Light = {
 const SVNGilroy_Bold = {
   fontFamily: "SVN-Gilroy",
   fontStyle: "normal",
-  fontDisplay: "swap",
   fontWeight: 600,
   src: `
     local('Raleway'),
@@ -45,7 +42,7 @@ const SVNGilroy_Bold = {
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Dela Gothic One"].join(","),
+    fontFamily: ["Dela Gothic One, SVN-Gilroy"].join(","),
   },
   breakpoints: {
     values: {

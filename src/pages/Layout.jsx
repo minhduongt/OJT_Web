@@ -6,20 +6,20 @@ import Router from "../routes";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <Container
+      maxWidth="xl"
+      sx={{
+        backgroundImage: `url(assets/landingPageBg.png)`,
+        minHeight: "4661px",
+        padding: "0",
+      }}
+    >
       <MainNav />
-      <Container
-        maxWidth="xl"
-        sx={{
-          backgroundImage: `url(assets/landingPageBg.png)`,
-          minHeight: "4661px",
-          padding: "0",
-        }}
-      >
-        {children}
-      </Container>
+
+      {children}
+
       <MainFooter />
-    </>
+    </Container>
   );
 };
 
