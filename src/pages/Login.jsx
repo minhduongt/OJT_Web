@@ -11,7 +11,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const LoginPage = () => {
+const LoginPage = (props) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -98,7 +98,10 @@ const LoginPage = () => {
             </Stack>
 
             <Button
-              onClick={() => navigate("/profile")}
+              onClick={() => {
+                navigate("/profile");
+                props.firstLoaded();
+              }}
               variant="contained"
               sx={{
                 height: "80px",

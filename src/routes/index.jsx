@@ -1,5 +1,5 @@
-import React, { useParams } from "react";
-import { Route, Routes, Link, Navigate } from "react-router-dom";
+import React, { useEffect, useParams, useState } from "react";
+import { Route, Routes, Link, Navigate, useNavigate } from "react-router-dom";
 import ApplyPage from "../pages/ApplyPage";
 import CompaniesPage from "../pages/Companies";
 import JobsPage from "../pages/Jobs";
@@ -10,6 +10,17 @@ import Page404 from "../pages/Page404";
 import Layout from "../pages/Layout";
 
 const Router = () => {
+  const navigate = useNavigate();
+  const [isFirtLoad, SetIsFirstLoad] = useState(true);
+
+  useEffect(() => {
+    if (isFirtLoad) navigate("/login");
+  }, [isFirtLoad]);
+  const FirstLoaded = () => {
+    SetIsFirstLoad(true);
+    console.log("loaded");
+  };
+
   return (
     <Routes>
       <Route
@@ -20,7 +31,7 @@ const Router = () => {
           </Layout>
         }
       />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage firstLoaded={FirstLoaded} />} />
       <Route
         path="/apply"
         element={

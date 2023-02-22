@@ -4,20 +4,147 @@ import {
   Avatar,
   Box,
   Button,
+  Divider,
   InputBase,
+  Menu,
+  MenuItem,
   Stack,
+  styled,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
 // ----------------------------------------------------------------------
+const StyledMenu = styled((props) => (
+  <Menu
+    elevation={0}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "right",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "right",
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: 6,
+    marginTop: theme.spacing(1),
+    minWidth: "220px",
+    color: "grey",
+    borderColor: "#FF4601",
+    boxShadow:
+      "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    "& .MuiMenu-list": {
+      padding: "4px 0",
+    },
+    "& .MuiMenuItem-root": {
+      "& .MuiSvgIcon-root": {
+        fontSize: 18,
+        color: "#FF4601",
+        marginRight: theme.spacing(1.5),
+      },
+      "&:active": {
+        backgroundColor: "#FF4601",
+      },
+    },
+  },
+}));
+
+const SelectGender = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Stack>
+        <Button
+          sx={{
+            width: "220px",
+            height: "44px",
+            backgroundColor: "#E5EBF2",
+            borderRadius: "40px",
+            ":hover": {
+              backgroundColor: "#E5EBF2",
+
+              opacity: 0.8,
+            },
+          }}
+          id="gender-select"
+          aria-controls={open ? "gender-select" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          variant="contained"
+          disableElevation
+          onClick={handleClick}
+          endIcon={<img src="assets/dropdownArrow.png" />}
+        >
+          <Typography
+            fontFamily={"SVN-Gilroy"}
+            sx={{
+              pl: "15px",
+              width: "219.95px",
+              textAlign: "left",
+              textTransform: "capitalize",
+              color: "#b3afaf",
+            }}
+          >
+            Chọn
+          </Typography>
+        </Button>
+        <StyledMenu
+          id="demo-customized-menu"
+          MenuListProps={{
+            "aria-labelledby": "demo-customized-button",
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose} disableRipple>
+            Nam
+          </MenuItem>
+          <Divider sx={{ my: 0.5 }} />
+          <MenuItem onClick={handleClose} disableRipple>
+            Nữ
+          </MenuItem>
+        </StyledMenu>
+        <Typography
+          color={"#FF4601"}
+          fontFamily={"SVN-Gilroy"}
+          fontWeight="300"
+        >
+          *Bắt buộc
+        </Typography>
+      </Stack>
+    </>
+  );
+};
 
 function UserForm() {
+  const [saved, SetSaved] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
   const uploadedImage = useRef(null);
   const imageUploader = useRef(null);
+  const navigate = useNavigate();
+
+  const saveProfile = () => {
+    SetSaved(true);
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
+
   const handleImageUpload = async (e) => {
     const [file] = e.target.files;
     if (file) {
@@ -48,6 +175,7 @@ function UserForm() {
       }
     }
   };
+
   const listInputs = [
     {
       title: "Họ và tên",
@@ -165,49 +293,77 @@ function UserForm() {
             placeholder="Họ và tên của bạn"
           />
           <InputBase
+            multiline
+            maxRows={4}
             sx={{
               width: "400px",
-              height: "40px",
+              minHeight: "40px",
               borderRadius: "40px",
               backgroundColor: "#E5EBF2",
               fontFamily: "SVN-Gilroy",
-              pl: "30px",
+              px: "30px",
             }}
             placeholder="“Giới thiệu bản thân”"
           />
         </Stack>
         <Stack gap={3} width="950px">
           {listInputs.map((input, index) => {
-            return (
-              <Stack
-                width={"100%"}
-                direction={"row"}
-                key={input.title}
-                alignItems="flex-start"
-                justifyContent={"space-between"}
-                gap={1}
-              >
-                <Typography minWidth={"180px"} fontSize="18px">
-                  {input.title}
-                </Typography>
-                <InputBase
-                  // type={input.type}
-                  sx={{
-                    width: "730px",
-                    height: "44px",
-                    borderRadius: "40px",
-                    backgroundColor: "#E5EBF2",
-                    fontFamily: "SVN-Gilroy",
-                    pl: "30px",
-                  }}
-                  placeholder={input.placeholder}
-                />
-              </Stack>
-            );
+            if (input.title === "Giới tính") {
+              return (
+                <Stack
+                  key={input.title}
+                  width={"100%"}
+                  direction={"row"}
+                  alignItems="flex-start"
+                  justifyContent={"flex-start"}
+                  gap={5}
+                >
+                  <Typography minWidth={"180px"} fontSize="18px">
+                    {input.title}
+                  </Typography>
+                  <SelectGender />
+                </Stack>
+              );
+            } else
+              return (
+                <Stack
+                  width={"100%"}
+                  direction={"row"}
+                  key={input.title}
+                  alignItems="flex-start"
+                  justifyContent={"space-between"}
+                  gap={1}
+                >
+                  <Typography minWidth={"180px"} fontSize="18px">
+                    {input.title}
+                  </Typography>
+                  <Stack>
+                    <InputBase
+                      // type={input.type}
+                      sx={{
+                        width: "730px",
+                        height: "44px",
+                        borderRadius: "40px",
+                        backgroundColor: "#E5EBF2",
+                        fontFamily: "SVN-Gilroy",
+                        pl: "30px",
+                      }}
+                      placeholder={input.placeholder}
+                    />
+                    <Typography
+                      color={"#FF4601"}
+                      fontFamily={"SVN-Gilroy"}
+                      fontWeight="300"
+                    >
+                      *Bắt buộc
+                    </Typography>
+                  </Stack>
+                </Stack>
+              );
           })}
           <Stack direction="row">
             <Button
-              onClick={() => navigate("/profile")}
+              onClick={() => navigate("/login")}
               variant="outlined"
               sx={{
                 height: "80px",
@@ -223,11 +379,13 @@ function UserForm() {
                 },
               }}
             >
-              <Typography>Quay lại</Typography>
+              <Typography fontSize={"20px"} textTransform={"capitalize"}>
+                Quay lại
+              </Typography>
             </Button>
             <Box minWidth="400px" pl="40px">
               <Button
-                onClick={() => navigate("/profile")}
+                onClick={() => saveProfile()}
                 variant="contained"
                 sx={{
                   height: "80px",
@@ -241,7 +399,24 @@ function UserForm() {
                   },
                 }}
               >
-                <Typography>Lưu thông tin</Typography>
+                <Stack direction={"row"} gap={1}>
+                  {saved ? (
+                    <img
+                      width={"30px"}
+                      height="30px"
+                      src={"assets/check.png"}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                  <Typography
+                    lineHeight={"34.75px"}
+                    fontSize={"24px"}
+                    textTransform={"capitalize"}
+                  >
+                    {saved ? "Đã lưu" : "Lưu thông tin"}
+                  </Typography>
+                </Stack>
               </Button>
             </Box>
           </Stack>
