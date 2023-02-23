@@ -652,6 +652,7 @@ const CompaniesPage = () => {
         container
         spacing={8}
         columns={4}
+        paddingBottom="200px"
       >
         {CompanyList2.map((com) => {
           return (

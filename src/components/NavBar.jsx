@@ -1,6 +1,30 @@
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
-
+import { Link, Stack, Typography, Divider, Popover } from "@mui/material";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
+import { useRef, useState } from "react";
+import { styled } from "@mui/material/styles";
 const MainNav = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const HoverText = styled(Typography)(({ theme }) => ({
+    "&:hover": {
+      color: "#FF4601",
+      cursor: "pointer",
+    },
+  }));
+
   return (
     <Stack
       direction={"row"}
@@ -49,39 +73,205 @@ const MainNav = () => {
           }}
           direction={"row"}
         >
-          <Link href="#" underline="hover">
+          <HoverText
+            onMouseEnter={handleOpenMenu}
+            onMouseLeave={handleCloseMenu}
+            sx={{
+              fontFamily: "SVN-Gilroy",
+              fontWeight: "400",
+              fontSize: "24px",
+              lineHeight: "25px",
+            }}
+          >
+            Giới thiệu
+          </HoverText>
+          <Popover
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleCloseMenu}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+          >
             <Typography
-              fontFamily="SVN-Gilroy"
-              fontWeight={"400"}
-              fontSize="24px"
-              lineHeight={"25px"}
-              color="#363534"
+              sx={{
+                p: 1.5,
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+              }}
             >
-              Giới thiệu
+              Tổng quan
             </Typography>
-          </Link>
-          <Link href="#" underline="hover">
+            <Divider sx={{ border: "1px solid rgba(255, 70, 1, 0.3)" }} />
             <Typography
-              fontFamily="SVN-Gilroy"
-              fontWeight={"400"}
-              fontSize="24px"
-              lineHeight={"25px"}
-              color="#363534"
+              sx={{
+                p: 1.5,
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+              }}
+            >
+              Quy trình OJT
+            </Typography>
+          </Popover>
+          {/* <Link href="#">
+          <HoverText
+            onClick={handleClick}
+            sx={{
+              fontFamily: "SVN-Gilroy",
+              fontWeight: "400",
+              fontSize: "24px",
+              lineHeight: "25px",
+            }}
+          >
+            Giới thiệu
+          </HoverText>
+          <Menu
+            id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Fade}
+          >
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+              }}
+              onClick={handleClose}
+            >
+              Tổng quan
+            </MenuItem>
+            <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+              }}
+              onClick={handleClose}
+            >
+              Quy trình OJT
+            </MenuItem>
+          </Menu>
+          </Link> */}
+
+          {/* <Link href="#" underline="hover">
+            <HoverText
+              onClick={handleClick}
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "24px",
+                lineHeight: "25px",
+              }}
             >
               Việc làm
-            </Typography>
-          </Link>
-          <Link href="#" underline="hover">
-            <Typography
-              fontFamily="SVN-Gilroy"
-              fontWeight={"400"}
-              fontSize="24px"
-              lineHeight={"25px"}
-              color="#363534"
+            </HoverText>
+            <Menu
+              id="fade-menu"
+              MenuListProps={{
+                "aria-labelledby": "fade-button",
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                }}
+                onClick={handleClose}
+              >
+                Công ty
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                }}
+                onClick={handleClose}
+              >
+                Công việc
+              </MenuItem>
+            </Menu>
+          </Link> */}
+          {/* <Link href="#" underline="hover">
+            <HoverText
+              onClick={handleClick}
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "24px",
+                lineHeight: "25px",
+              }}
             >
               Quản lý OJT
-            </Typography>
-          </Link>
+            </HoverText>
+            <Menu
+              id="fade-menu"
+              MenuListProps={{
+                "aria-labelledby": "fade-button",
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                }}
+                onClick={handleClose}
+              >
+                Thông báo OJT
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                }}
+                onClick={handleClose}
+              >
+                Các vấn đề OJT
+              </MenuItem>
+            </Menu>
+          </Link> */}
         </Stack>
         <Stack
           spacing={1.5}
