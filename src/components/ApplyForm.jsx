@@ -12,6 +12,11 @@ import {
   styled,
   TextField,
   Typography,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -132,6 +137,34 @@ const SelectGender = () => {
 };
 
 function ApplyForm() {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const [open1, setOpen1] = useState(false);
+
+  const handleClickOpen1 = () => {
+    setOpen1(true);
+  };
+
+  const handleClose1 = () => {
+    setOpen1(false);
+  };
+  const [open2, setOpen2] = useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
+
   const [saved, SetSaved] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
@@ -329,6 +362,8 @@ function ApplyForm() {
             alignItems="flex-start"
             justifyContent={"flex-start"}
             gap={5}
+            paddingX="110px"
+            pt="16px"
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
               Email
@@ -349,6 +384,8 @@ function ApplyForm() {
             alignItems="flex-start"
             justifyContent={"flex-start"}
             gap={5}
+            paddingX="110px"
+            pt="16px"
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
               Người nhận
@@ -369,6 +406,8 @@ function ApplyForm() {
             alignItems="flex-start"
             justifyContent={"flex-start"}
             gap={5}
+            paddingX="110px"
+            pt="16px"
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
               Tiêu đề
@@ -389,6 +428,8 @@ function ApplyForm() {
             alignItems="flex-start"
             justifyContent={"flex-start"}
             gap={5}
+            paddingX="110px"
+            pt="16px"
             pb="10px"
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
@@ -418,6 +459,8 @@ function ApplyForm() {
             alignItems="center"
             justifyContent={"flex-start"}
             gap={5}
+            paddingX="110px"
+            pt="16px"
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
               File đính kèm
@@ -476,7 +519,6 @@ function ApplyForm() {
             </Button>
             <Box minWidth="400px" pl="40px">
               <Button
-                onClick={() => saveProfile()}
                 variant="contained"
                 sx={{
                   height: "80px",
@@ -489,6 +531,7 @@ function ApplyForm() {
                     opacity: 0.8,
                   },
                 }}
+                onClick={handleClickOpen}
               >
                 <Stack direction={"row"} gap={1} alignItems="center">
                   <Typography
@@ -500,6 +543,372 @@ function ApplyForm() {
                   </Typography>
                 </Stack>
               </Button>
+              <Dialog
+                sx={{
+                  width: "1170px",
+                  height: "908px",
+                  borderRadius: "10px",
+                  boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                }}
+                open={open}
+                onClose={handleClose}
+              >
+                <Typography
+                  fontFamily={"Dela Gothic One"}
+                  fontSize="32px"
+                  fontWeight={400}
+                  color={"#022C59"}
+                  pt={"43px"}
+                  pl="110px"
+                  width={"100%"}
+                >
+                  Trần Nguyễn Văn An _ Software Developer Intern
+                </Typography>
+                <DialogContent>
+                  <DialogContentText>
+                    <Stack
+                      width={"100%"}
+                      direction={"row"}
+                      alignItems="flex-start"
+                      justifyContent={"flex-start"}
+                      gap={5}
+                      paddingX="110px"
+                      pt="16px"
+                    >
+                      <Typography
+                        color="#022C59"
+                        minWidth={"180px"}
+                        fontSize="18px"
+                      >
+                        Email
+                      </Typography>
+                      <Stack direction={"row"} alignItems="center">
+                        <Typography
+                          fontFamily={"SVN-Gilroy"}
+                          fontSize="18px"
+                          fontWeight={"300"}
+                        >
+                          AnTNVSE151222@fpt.edu.vn
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      width={"100%"}
+                      direction={"row"}
+                      alignItems="flex-start"
+                      justifyContent={"flex-start"}
+                      gap={5}
+                      paddingX="110px"
+                      pt="16px"
+                    >
+                      <Typography
+                        color="#022C59"
+                        minWidth={"180px"}
+                        fontSize="18px"
+                      >
+                        Người nhận
+                      </Typography>
+                      <Stack direction={"row"} alignItems="center">
+                        <Typography
+                          fontFamily={"SVN-Gilroy"}
+                          fontSize="18px"
+                          fontWeight={"300"}
+                        >
+                          svcinfo@schaeffler.com
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      width={"100%"}
+                      direction={"row"}
+                      alignItems="flex-start"
+                      justifyContent={"flex-start"}
+                      gap={5}
+                      paddingX="110px"
+                      pt="16px"
+                    >
+                      <Typography
+                        color="#022C59"
+                        minWidth={"180px"}
+                        fontSize="18px"
+                      >
+                        Tiêu đề
+                      </Typography>
+                      <Stack direction={"row"} alignItems="center">
+                        <Typography
+                          fontFamily={"SVN-Gilroy"}
+                          fontSize="18px"
+                          fontWeight={"300"}
+                        >
+                          Trần Nguyễn Văn An_Software Developer Intern
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      width={"100%"}
+                      direction={"row"}
+                      alignItems="flex-start"
+                      justifyContent={"flex-start"}
+                      gap={5}
+                      paddingX="110px"
+                      pt="16px"
+                      pb="10px"
+                    >
+                      <Typography
+                        color="#022C59"
+                        minWidth={"180px"}
+                        fontSize="18px"
+                      >
+                        Nội dung
+                      </Typography>
+                      <Stack direction={"row"}>
+                        <Typography
+                          fontFamily={"SVN-Gilroy"}
+                          fontSize="18px"
+                          fontWeight={"400"}
+                        >
+                          Dear HR Department of Schaeffler Vietnam Company
+                          Limited, My name is Trần Nguyễn Văn A, stuyding at FPT
+                          University in Software Engineer major. This is in
+                          reference to the job Software Developer Intern posting
+                          by you. I read the job description and found that my
+                          work experiences as well as my skills and the job
+                          requirements may be a perfect match. I have attached
+                          my CV to this email. I hope you will learn more about
+                          my background, education, achievements, and awards
+                          through my CV. Please feel free to let me know if I
+                          can provide you with any further information. I am
+                          looking forward to hearing from you. Your Sincerely,
+                          Văn An
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      width={"100%"}
+                      direction={"row"}
+                      alignItems="center"
+                      justifyContent={"flex-start"}
+                      gap={5}
+                      paddingX="110px"
+                      pt="16px"
+                    >
+                      <Typography
+                        color="#022C59"
+                        minWidth={"180px"}
+                        fontSize="18px"
+                      >
+                        File đính kèm
+                      </Typography>
+                      <Stack direction={"row"} alignItems="center" gap={2}>
+                        <Stack direction={"row"} alignItems="center">
+                          <Typography
+                            color="#022C59"
+                            minWidth={"180px"}
+                            fontSize="18px"
+                          >
+                            CV
+                          </Typography>
+                          <Stack direction={"row"} alignItems="center" gap={2}>
+                            <img
+                              width={"50px"}
+                              height={"50px"}
+                              src={"assets/cvImage.png"}
+                            />
+                            <Typography
+                              fontFamily={"SVN-Gilroy"}
+                              fontSize="14px"
+                              fontWeight={"300"}
+                              color="#FF4601"
+                            >
+                              CV_SE151222_TRẦN NGUYỄN VĂN AN.pdf
+                            </Typography>
+                            <Box onClick={() => navigate("/editprofile")}>
+                              <img
+                                width={"25px"}
+                                height={"25px"}
+                                src={"assets/editProfileIcon.png"}
+                              />
+                            </Box>
+                          </Stack>
+                        </Stack>
+                      </Stack>
+                    </Stack>
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Stack
+                    direction={"row"}
+                    spacing="40px"
+                    paddingY={"40px"}
+                    paddingRight="425px"
+                  >
+                    {" "}
+                    <Button
+                      onClick={handleClose}
+                      variant="outlined"
+                      sx={{
+                        height: "80px",
+                        width: "180px",
+                        backgroundColor: "#FFFFF",
+                        color: "#FF4601",
+                        borderColor: "#FF4601",
+                        borderRadius: "40px",
+                        ":hover": {
+                          backgroundColor: "#cec7c762",
+                          borderColor: "#FF4601",
+                          opacity: 0.8,
+                        },
+                      }}
+                    >
+                      <Typography
+                        fontSize={"20px"}
+                        textTransform={"capitalize"}
+                      >
+                        Quay lại
+                      </Typography>
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        height: "80px",
+                        width: "330px",
+                        backgroundColor: "#FF4601",
+                        color: "#FFFFF",
+                        borderRadius: "40px",
+                        ":hover": {
+                          backgroundColor: "#FF4601",
+                          opacity: 0.8,
+                        },
+                      }}
+                      // onClick={() => saveProfile()}
+                      onClick={handleClickOpen1}
+                    >
+                      <Stack direction={"row"} gap={1} alignItems="center">
+                        <Typography
+                          lineHeight={"34.75px"}
+                          fontSize={"24px"}
+                          textTransform={"capitalize"}
+                        >
+                          Ứng tuyển
+                        </Typography>
+                      </Stack>
+                    </Button>
+                    <Dialog
+                      open={open1}
+                      onClose={handleClose1}
+                      sx={{
+                        border: "10px",
+                        boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                      }}
+                    >
+                      <Typography
+                        fontFamily={"Dela Gothic One"}
+                        fontSize="36px"
+                        fontWeight={400}
+                        lineHeight="52.13px"
+                        color={"#FF4601"}
+                        pl="40px"
+                        pt="60px"
+                        pr="60px"
+                      >
+                        XÁC NHẬN ỨNG TUYỂN
+                      </Typography>
+                      <DialogContent>
+                        <Typography
+                          fontFamily={"SVN-Gilroy"}
+                          fontSize="18px"
+                          fontWeight={400}
+                          lineHeight="27px"
+                          color={"#363534"}
+                          pl="18px"
+                          pr="60px"
+                        >
+                          Bạn chắc chắn muốn gửi hồ sơ ứng tuyển?
+                        </Typography>
+                      </DialogContent>
+                      <DialogActions>
+                        <Stack
+                          direction={"row"}
+                          spacing="20px"
+                          pr={38.5}
+                          pb="50px"
+                        >
+                          <Typography
+                            onClick={handleClose1}
+                            color={"#FF4601"}
+                            border=" 2px solid #FF4601"
+                            borderRadius={"40px"}
+                            paddingX="25px"
+                            paddingY={"10px"}
+                          >
+                            Thoát
+                          </Typography>
+                          <Typography
+                            color={"#FF4601"}
+                            border=" 2px solid #FF4601"
+                            borderRadius={"40px"}
+                            paddingX="25px"
+                            paddingY={"10px"}
+                            onClick={handleClickOpen2}
+                          >
+                            Tiếp tục
+                          </Typography>
+                        </Stack>
+                        <Dialog
+                          sx={{
+                            border: "10px",
+                            boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                          }}
+                          open={open2}
+                          onClose={handleClose2}
+                        >
+                          <Typography
+                            fontFamily={"Dela Gothic One"}
+                            fontSize="36px"
+                            fontWeight={400}
+                            lineHeight="52.13px"
+                            color={"#FF4601"}
+                            pl="40px"
+                            pt="60px"
+                            pr="60px"
+                          >
+                            XÁC NHẬN THÀNH CÔNG
+                          </Typography>
+                          <DialogContent>
+                            <Typography
+                              fontFamily={"SVN-Gilroy"}
+                              fontSize="18px"
+                              fontWeight={400}
+                              lineHeight="27px"
+                              color={"#363534"}
+                              pl="18px"
+                              pr="60px"
+                            >
+                              Đơn ứng tuyển của bạn đã được gửi thành công.
+                              Thường xuyên kiểm tra email và trang quá trình ứng
+                              tuyển để cập nhật thông tin nhanh chóng.
+                            </Typography>
+                          </DialogContent>
+                          <DialogActions>
+                            <Stack direction={"row"} pr={138} pb="50px">
+                              <Typography
+                                onClick={() => navigate("/#")}
+                                color={"#FF4601"}
+                                border="2px solid #FF4601"
+                                borderRadius={"40px"}
+                                paddingX="25px"
+                                paddingY={"10px"}
+                              >
+                                Về trang chủ
+                              </Typography>
+                            </Stack>
+                          </DialogActions>
+                        </Dialog>
+                      </DialogActions>
+                    </Dialog>
+                  </Stack>
+                </DialogActions>
+              </Dialog>
             </Box>
           </Stack>
         </Stack>

@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
-
+import { useNavigate } from "react-router-dom";
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -55,6 +55,7 @@ const HoverText = styled(Typography)(({ theme }) => ({
 }));
 
 const LinksHover = () => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorE2, setAnchorE2] = useState(null);
   const [anchorE3, setAnchorE3] = useState(null);
@@ -200,7 +201,7 @@ const LinksHover = () => {
                   color: "#FF4601",
                 },
               }}
-              onClick={handleClose2}
+              onClick={(handleClose2) => navigate("/companies")}
             >
               Công ty
             </MenuItem>
@@ -217,7 +218,7 @@ const LinksHover = () => {
                   color: "#FF4601",
                 },
               }}
-              onClick={handleClose2}
+              onClick={(handleClose2) => navigate("/jobs")}
             >
               Công việc
             </MenuItem>
