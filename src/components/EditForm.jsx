@@ -10,7 +10,6 @@ import {
   MenuItem,
   Stack,
   styled,
-  TextField,
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -131,7 +130,7 @@ const SelectGender = () => {
   );
 };
 
-function ApplyForm() {
+function EditForm() {
   const [saved, SetSaved] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
@@ -142,8 +141,8 @@ function ApplyForm() {
   const saveProfile = () => {
     SetSaved(true);
     setTimeout(() => {
-      navigate("/");
-    }, 3000);
+      navigate("/apply");
+    }, 1000);
   };
 
   const handleImageUpload = async (e) => {
@@ -323,95 +322,69 @@ function ApplyForm() {
           />
         </Stack>
         <Stack gap={3} width="950px">
-          <Stack
-            width={"100%"}
-            direction={"row"}
-            alignItems="flex-start"
-            justifyContent={"flex-start"}
-            gap={5}
-          >
-            <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
-              Email
-            </Typography>
-            <Stack direction={"row"} alignItems="center">
-              <Typography
-                fontFamily={"SVN-Gilroy"}
-                fontSize="18px"
-                fontWeight={"300"}
-              >
-                AnTNVSE151222@fpt.edu.vn
-              </Typography>
-            </Stack>
-          </Stack>
-          <Stack
-            width={"100%"}
-            direction={"row"}
-            alignItems="flex-start"
-            justifyContent={"flex-start"}
-            gap={5}
-          >
-            <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
-              Người nhận
-            </Typography>
-            <Stack direction={"row"} alignItems="center">
-              <Typography
-                fontFamily={"SVN-Gilroy"}
-                fontSize="18px"
-                fontWeight={"300"}
-              >
-                svcinfo@schaeffler.com
-              </Typography>
-            </Stack>
-          </Stack>
-          <Stack
-            width={"100%"}
-            direction={"row"}
-            alignItems="flex-start"
-            justifyContent={"flex-start"}
-            gap={5}
-          >
-            <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
-              Tiêu đề
-            </Typography>
-            <Stack direction={"row"} alignItems="center">
-              <Typography
-                fontFamily={"SVN-Gilroy"}
-                fontSize="18px"
-                fontWeight={"300"}
-              >
-                Trần Nguyễn Văn An_Software Developer Intern
-              </Typography>
-            </Stack>
-          </Stack>
-          <Stack
-            width={"100%"}
-            direction={"row"}
-            alignItems="flex-start"
-            justifyContent={"flex-start"}
-            gap={5}
-            pb="10px"
-          >
-            <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
-              Nội dung
-            </Typography>
-            <Stack direction={"row"}>
-              <InputBase
-                multiline
-                maxRows={10}
-                sx={{
-                  alignItems: "flex-start",
-                  width: "840px",
-                  height: "379px",
-                  minHeight: "40px",
-                  borderRadius: "10px",
-                  backgroundColor: "#E5EBF2",
-                  fontFamily: "SVN-Gilroy",
-                  px: "25px",
-                }}
-                placeholder="Nhập nội dung của bạn...."
-              />
-            </Stack>
-          </Stack>
+          {listInputs.map((input, index) => {
+            if (input.title === "Giới tính") {
+              return (
+                <Stack
+                  key={input.title}
+                  width={"100%"}
+                  direction={"row"}
+                  alignItems="center"
+                  justifyContent={"flex-start"}
+                  gap={5}
+                >
+                  <Typography
+                    color="#022C59"
+                    minWidth={"180px"}
+                    fontSize="18px"
+                  >
+                    {input.title}
+                  </Typography>
+                  <SelectGender />
+                </Stack>
+              );
+            } else
+              return (
+                <Stack
+                  width={"100%"}
+                  direction={"row"}
+                  key={input.title}
+                  alignItems="flex-start"
+                  justifyContent={"space-between"}
+                  gap={1}
+                >
+                  <Typography
+                    color="#022C59"
+                    minWidth={"180px"}
+                    fontSize="18px"
+                  >
+                    {input.title}
+                  </Typography>
+                  <Stack>
+                    <InputBase
+                      value={input.value}
+                      // type={input.type}
+                      sx={{
+                        width: "730px",
+                        height: "44px",
+                        borderRadius: "40px",
+                        backgroundColor: "#E5EBF2",
+                        fontFamily: "SVN-Gilroy",
+                        pl: "30px",
+                      }}
+                      placeholder={input.placeholder}
+                    />
+                    <Typography
+                      color={"#FF4601"}
+                      fontFamily={"SVN-Gilroy"}
+                      fontWeight="300"
+                    >
+                      *Bắt buộc
+                    </Typography>
+                  </Stack>
+                </Stack>
+              );
+          })}
           <Stack
             width={"100%"}
             direction={"row"}
@@ -420,36 +393,18 @@ function ApplyForm() {
             gap={5}
           >
             <Typography color="#022C59" minWidth={"180px"} fontSize="18px">
-              File đính kèm
+              CV
             </Typography>
             <Stack direction={"row"} alignItems="center" gap={2}>
-              <Stack direction={"row"} alignItems="center">
-                <Typography minWidth={"180px"} fontSize="18px">
-                  CV
-                </Typography>
-                <Stack direction={"row"} alignItems="center" gap={2}>
-                  <img
-                    width={"50px"}
-                    height={"50px"}
-                    src={"assets/cvImage.png"}
-                  />
-                  <Typography
-                    fontFamily={"SVN-Gilroy"}
-                    fontSize="14px"
-                    fontWeight={"300"}
-                    color="#FF4601"
-                  >
-                    CV_SE151222_TRẦN NGUYỄN VĂN AN.pdf
-                  </Typography>
-                  <Box onClick={() => navigate("/editprofile")}>
-                    <img
-                      width={"25px"}
-                      height={"25px"}
-                      src={"assets/editProfileIcon.png"}
-                    />
-                  </Box>
-                </Stack>
-              </Stack>
+              <img width={"50px"} height={"50px"} src={"assets/cvImage.png"} />
+              <Typography
+                fontFamily={"SVN-Gilroy"}
+                fontSize="14px"
+                fontWeight={"300"}
+                color="#FF4601"
+              >
+                Có 1 tệp được tải lên (CV_SE151222_TRẦN NGUYỄN VĂN AN.pdf)
+              </Typography>
             </Stack>
           </Stack>
           <Stack direction="row">
@@ -491,12 +446,21 @@ function ApplyForm() {
                 }}
               >
                 <Stack direction={"row"} gap={1} alignItems="center">
+                  {saved ? (
+                    <img
+                      width={"30px"}
+                      height="30px"
+                      src={"assets/check.png"}
+                    />
+                  ) : (
+                    <></>
+                  )}
                   <Typography
                     lineHeight={"34.75px"}
                     fontSize={"24px"}
                     textTransform={"capitalize"}
                   >
-                    Ứng tuyển
+                    {saved ? "Đã lưu" : "Lưu thông tin"}
                   </Typography>
                 </Stack>
               </Button>
@@ -508,4 +472,4 @@ function ApplyForm() {
   );
 }
 
-export default ApplyForm;
+export default EditForm;

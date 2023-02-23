@@ -8,6 +8,7 @@ import ProfilePage from "../pages/Profile";
 import LandingPage from "../pages/LandingPage";
 import Page404 from "../pages/Page404";
 import Layout from "../pages/Layout";
+import EditProfile from "../pages/EditProfile";
 
 const Router = () => {
   const navigate = useNavigate();
@@ -41,6 +42,14 @@ const Router = () => {
         }
       />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route
+        path="/editprofile"
+        element={
+          <Layout isMinHeight={false}>
+            <EditProfile />
+          </Layout>
+        }
+      />
       <Route
         path="/jobs"
         element={

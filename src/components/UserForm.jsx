@@ -288,7 +288,7 @@ function UserForm() {
               borderRadius: "40px",
               backgroundColor: "#E5EBF2",
               fontFamily: "SVN-Gilroy",
-              pl: "30px",
+              pl: "125px",
             }}
             placeholder="Họ và tên của bạn"
           />
@@ -301,7 +301,7 @@ function UserForm() {
               borderRadius: "40px",
               backgroundColor: "#E5EBF2",
               fontFamily: "SVN-Gilroy",
-              px: "30px",
+              px: "125px",
             }}
             placeholder="“Giới thiệu bản thân”"
           />
@@ -314,7 +314,7 @@ function UserForm() {
                   key={input.title}
                   width={"100%"}
                   direction={"row"}
-                  alignItems="flex-start"
+                  alignItems="center"
                   justifyContent={"flex-start"}
                   gap={5}
                 >
@@ -330,7 +330,7 @@ function UserForm() {
                   width={"100%"}
                   direction={"row"}
                   key={input.title}
-                  alignItems="flex-start"
+                  alignItems="center"
                   justifyContent={"space-between"}
                   gap={1}
                 >

@@ -1,9 +1,9 @@
 import BasicNav from "../components/BasicNavBar";
 import { Container, Stack, Typography } from "@mui/material";
 import UserForm from "../components/UserForm";
-import ApplyForm from "../components/ApplyForm";
+import EditForm from "../components/EditForm";
 
-const ApplyPage = () => {
+const EditProfile = () => {
   return (
     <Container
       w="1920px"
@@ -28,7 +28,7 @@ const ApplyPage = () => {
           fontWeight={400}
           height="40px"
         >
-          ỨNG TUYỂN
+          CHỈNH SỬA THÔNG TIN
         </Typography>
         <Stack
           height="40px"
@@ -42,11 +42,10 @@ const ApplyPage = () => {
         />
       </Stack>
       <Stack pb="200px">
-        {" "}
-        <ApplyForm />
+        <EditForm />
       </Stack>
     </Container>
   );
 };
 
-export default ApplyPage;
+export default EditProfile;
