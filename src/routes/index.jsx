@@ -26,7 +26,7 @@ const Router = () => {
       <Route
         path="/"
         element={
-          <Layout>
+          <Layout isMinHeight={true}>
             <LandingPage />
           </Layout>
         }
@@ -35,7 +35,7 @@ const Router = () => {
       <Route
         path="/apply"
         element={
-          <Layout>
+          <Layout isMinHeight={false}>
             <ApplyPage />
           </Layout>
         }
@@ -44,7 +44,7 @@ const Router = () => {
       <Route
         path="/jobs"
         element={
-          <Layout>
+          <Layout isMinHeight={false}>
             <JobsPage />
           </Layout>
         }
@@ -52,7 +52,7 @@ const Router = () => {
       <Route
         path="/companies"
         element={
-          <Layout>
+          <Layout isMinHeight={false}>
             <CompaniesPage />
           </Layout>
         }

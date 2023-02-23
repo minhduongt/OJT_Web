@@ -1,6 +1,7 @@
 import BasicNav from "../components/BasicNavBar";
 import { Container, Stack, Typography } from "@mui/material";
 import UserForm from "../components/UserForm";
+import ApplyForm from "../components/ApplyForm";
 
 const ApplyPage = () => {
   return (
@@ -11,8 +12,6 @@ const ApplyPage = () => {
         p: 0,
       }}
     >
-      <BasicNav />
-
       <Stack
         direction={"row"}
         sx={{
@@ -42,7 +41,10 @@ const ApplyPage = () => {
           }}
         />
       </Stack>
-      <UserForm />
+      <Stack pb="200px">
+        {" "}
+        <ApplyForm />
+      </Stack>
     </Container>
   );
 };

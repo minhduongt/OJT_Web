@@ -1,30 +1,318 @@
-import { Link, Stack, Typography, Divider, Popover } from "@mui/material";
+import { Link, Stack, Typography, Divider, Popover, Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
-const MainNav = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleOpenMenu = (event) => {
+const StyledMenu = styled((props) => (
+  <Menu
+    elevation={0}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "right",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "right",
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: 6,
+    marginTop: theme.spacing(1),
+    minWidth: "220px",
+    color: "grey",
+    borderColor: "#FF4601",
+    boxShadow: " 0px 0px 10px 1px rgba(255, 70, 1, 0.15)",
+    "& .MuiMenu-list": {
+      padding: "4px 0",
+    },
+    "& .MuiMenuItem-root": {
+      "& .MuiSvgIcon-root": {
+        fontSize: 18,
+        color: "#FF4601",
+        marginRight: theme.spacing(1.5),
+      },
+      "&:active": {
+        backgroundColor: "#FF4601",
+      },
+    },
+  },
+}));
+const HoverText = styled(Typography)(({ theme }) => ({
+  fontFamily: "SVN-Gilroy",
+  fontSize: "24px",
+  fontWeight: "500",
+  color: "#363534",
+  "&:hover": {
+    color: "#FF4601",
+    opacity: 0.5,
+    cursor: "pointer",
+  },
+}));
+
+const LinksHover = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorE2, setAnchorE2] = useState(null);
+  const [anchorE3, setAnchorE3] = useState(null);
+  const open = Boolean(anchorEl);
+  const open2 = Boolean(anchorE2);
+  const open3 = Boolean(anchorE3);
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
-  const handleCloseMenu = () => {
+  const handleClick2 = (event) => {
+    setAnchorE2(event.currentTarget);
+  };
+  const handleClick3 = (event) => {
+    setAnchorE3(event.currentTarget);
+  };
+  const handleClose = (event) => {
     setAnchorEl(null);
   };
+  const handleClose2 = (event) => {
+    setAnchorE2(null);
+  };
+  const handleClose3 = (event) => {
+    setAnchorE3(null);
+  };
+  return (
+    <>
+      <Stack
+        sx={{
+          width: "447px",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+        direction={"row"}
+      >
+        <Link href="#" underline="none">
+          <HoverText
+            onMouseOver={handleClick}
+            sx={{
+              fontFamily: "SVN-Gilroy",
+              fontWeight: "400",
+              fontSize: "24px",
+              lineHeight: "25px",
+              color: open ? "#FF4601" : "",
+            }}
+          >
+            Giới thiệu
+          </HoverText>
+          <Menu
+            sx={{ display: "relative", top: "40px" }}
+            id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Fade}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose}
+            >
+              Tổng quan OJT
+            </MenuItem>
+            <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose}
+            >
+              Quy trình OJT
+            </MenuItem>
+          </Menu>
+        </Link>
+        <Link href="#" underline="none">
+          <HoverText
+            onMouseOver={handleClick2}
+            sx={{
+              fontFamily: "SVN-Gilroy",
+              fontWeight: "400",
+              fontSize: "24px",
+              lineHeight: "25px",
+              color: open2 ? "#FF4601" : "",
+            }}
+          >
+            Việc làm
+          </HoverText>
+          <Menu
+            sx={{ display: "relative", top: "40px" }}
+            id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorE2}
+            open={open2}
+            onClose={handleClose2}
+            TransitionComponent={Fade}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose2}
+            >
+              Công ty
+            </MenuItem>
+            <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose2}
+            >
+              Công việc
+            </MenuItem>
+          </Menu>
+        </Link>
+        <Link href="#" underline="none">
+          <HoverText
+            onMouseOver={handleClick3}
+            sx={{
+              fontFamily: "SVN-Gilroy",
+              fontWeight: "400",
+              fontSize: "24px",
+              lineHeight: "25px",
+              color: open3 ? "#FF4601" : "",
+            }}
+          >
+            Quản lý OJT
+          </HoverText>
+          <Menu
+            sx={{ display: "relative", top: "40px" }}
+            id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorE3}
+            open={open3}
+            onClose={handleClose3}
+            TransitionComponent={Fade}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose3}
+            >
+              Thông báo OJT
+            </MenuItem>
+            <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+            <MenuItem
+              sx={{
+                fontFamily: "SVN-Gilroy",
+                fontWeight: "400",
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#363534",
+                ":hover": {
+                  backgroundColor: "#E5EBF2",
+                  color: "#FF4601",
+                },
+              }}
+              onClick={handleClose3}
+            >
+              Các vấn đề OJT
+            </MenuItem>
+          </Menu>
+        </Link>
+      </Stack>
+    </>
+  );
+};
 
-  const open = Boolean(anchorEl);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const HoverText = styled(Typography)(({ theme }) => ({
-    "&:hover": {
-      color: "#FF4601",
-      cursor: "pointer",
-    },
-  }));
+const MainNav = () => {
+  const [anchorRing, setAnchorRing] = useState(null);
+  const [anchorLogo, setAnchorLogo] = useState(null);
+  const openRing = Boolean(anchorRing);
+  const openLogo = Boolean(anchorLogo);
 
+  const handleClickRing = (event) => {
+    setAnchorRing(event.currentTarget);
+  };
+  const handleClickLogo = (event) => {
+    setAnchorLogo(event.currentTarget);
+  };
+  const handleCloseRing = (event) => {
+    setAnchorRing(null);
+  };
+  const handleCloseLogo = (event) => {
+    setAnchorLogo(null);
+  };
   return (
     <Stack
       direction={"row"}
@@ -65,214 +353,7 @@ const MainNav = () => {
         </Typography>
       </Stack>
       <Stack direction="row">
-        <Stack
-          sx={{
-            width: "447px",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-          direction={"row"}
-        >
-          <HoverText
-            onMouseEnter={handleOpenMenu}
-            onMouseLeave={handleCloseMenu}
-            sx={{
-              fontFamily: "SVN-Gilroy",
-              fontWeight: "400",
-              fontSize: "24px",
-              lineHeight: "25px",
-            }}
-          >
-            Giới thiệu
-          </HoverText>
-          <Popover
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleCloseMenu}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-          >
-            <Typography
-              sx={{
-                p: 1.5,
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "20px",
-                lineHeight: "25px",
-                color: "#363534",
-              }}
-            >
-              Tổng quan
-            </Typography>
-            <Divider sx={{ border: "1px solid rgba(255, 70, 1, 0.3)" }} />
-            <Typography
-              sx={{
-                p: 1.5,
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "20px",
-                lineHeight: "25px",
-                color: "#363534",
-              }}
-            >
-              Quy trình OJT
-            </Typography>
-          </Popover>
-          {/* <Link href="#">
-          <HoverText
-            onClick={handleClick}
-            sx={{
-              fontFamily: "SVN-Gilroy",
-              fontWeight: "400",
-              fontSize: "24px",
-              lineHeight: "25px",
-            }}
-          >
-            Giới thiệu
-          </HoverText>
-          <Menu
-            id="fade-menu"
-            MenuListProps={{
-              "aria-labelledby": "fade-button",
-            }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-          >
-            <MenuItem
-              sx={{
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "20px",
-                lineHeight: "25px",
-                color: "#363534",
-              }}
-              onClick={handleClose}
-            >
-              Tổng quan
-            </MenuItem>
-            <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
-            <MenuItem
-              sx={{
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "20px",
-                lineHeight: "25px",
-                color: "#363534",
-              }}
-              onClick={handleClose}
-            >
-              Quy trình OJT
-            </MenuItem>
-          </Menu>
-          </Link> */}
-
-          {/* <Link href="#" underline="hover">
-            <HoverText
-              onClick={handleClick}
-              sx={{
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "24px",
-                lineHeight: "25px",
-              }}
-            >
-              Việc làm
-            </HoverText>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{
-                "aria-labelledby": "fade-button",
-              }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-              <MenuItem
-                sx={{
-                  fontFamily: "SVN-Gilroy",
-                  fontWeight: "400",
-                  fontSize: "20px",
-                  lineHeight: "25px",
-                  color: "#363534",
-                }}
-                onClick={handleClose}
-              >
-                Công ty
-              </MenuItem>
-              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
-              <MenuItem
-                sx={{
-                  fontFamily: "SVN-Gilroy",
-                  fontWeight: "400",
-                  fontSize: "20px",
-                  lineHeight: "25px",
-                  color: "#363534",
-                }}
-                onClick={handleClose}
-              >
-                Công việc
-              </MenuItem>
-            </Menu>
-          </Link> */}
-          {/* <Link href="#" underline="hover">
-            <HoverText
-              onClick={handleClick}
-              sx={{
-                fontFamily: "SVN-Gilroy",
-                fontWeight: "400",
-                fontSize: "24px",
-                lineHeight: "25px",
-              }}
-            >
-              Quản lý OJT
-            </HoverText>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{
-                "aria-labelledby": "fade-button",
-              }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Fade}
-            >
-              <MenuItem
-                sx={{
-                  fontFamily: "SVN-Gilroy",
-                  fontWeight: "400",
-                  fontSize: "20px",
-                  lineHeight: "25px",
-                  color: "#363534",
-                }}
-                onClick={handleClose}
-              >
-                Thông báo OJT
-              </MenuItem>
-              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
-              <MenuItem
-                sx={{
-                  fontFamily: "SVN-Gilroy",
-                  fontWeight: "400",
-                  fontSize: "20px",
-                  lineHeight: "25px",
-                  color: "#363534",
-                }}
-                onClick={handleClose}
-              >
-                Các vấn đề OJT
-              </MenuItem>
-            </Menu>
-          </Link> */}
-        </Stack>
+        <LinksHover />
         <Stack
           spacing={1.5}
           direction={"row"}
@@ -284,20 +365,184 @@ const MainNav = () => {
             minHeight: "60px",
           }}
         >
-          <img
-            src={"/assets/ringbellfixed.png"}
-            alt={"Logo"}
-            loading="lazy"
-            width={"44px"}
-            height="44px"
-          />
-          <img
-            src={"/assets/currentUser.png"}
-            alt={"Logo"}
-            loading="lazy"
-            width={"60px"}
-            height="60px"
-          />
+          <Box>
+            <Box
+              onClick={handleClickRing}
+              sx={{
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <img
+                src={"/assets/ringbellfixed.png"}
+                alt={"Logo"}
+                loading="lazy"
+                width={"44px"}
+                height="44px"
+              />
+            </Box>
+            <Menu
+              sx={{ display: "relative", top: "40px" }}
+              id="fade-menu"
+              MenuListProps={{
+                "aria-labelledby": "fade-button",
+              }}
+              anchorEl={anchorRing}
+              open={openRing}
+              onClose={handleCloseRing}
+              TransitionComponent={Fade}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseRing}
+              >
+                Công ty TNHH Schaeffler có 3 vị trí ứng tuyển mới
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseRing}
+              >
+                Thông báo hướng dẫn đăng ký OJT trên website
+              </MenuItem>
+            </Menu>
+          </Box>
+
+          <Box>
+            <Box
+              onClick={handleClickLogo}
+              sx={{
+                ":hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <img
+                src={"/assets/currentUser.png"}
+                alt={"Logo"}
+                loading="lazy"
+                width={"60px"}
+                height="60px"
+              />
+            </Box>
+
+            <Menu
+              sx={{ display: "relative", top: "40px" }}
+              id="fade-menu"
+              MenuListProps={{
+                "aria-labelledby": "fade-button",
+              }}
+              anchorEl={anchorLogo}
+              open={openLogo}
+              onClose={handleCloseLogo}
+              TransitionComponent={Fade}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseLogo}
+              >
+                Hồ sơ ứng viên
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseLogo}
+              >
+                Quá trình ứng tuyển
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseLogo}
+              >
+                Hỗ trợ
+              </MenuItem>
+              <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
+              <MenuItem
+                sx={{
+                  fontFamily: "SVN-Gilroy",
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "25px",
+                  color: "#363534",
+                  ":hover": {
+                    backgroundColor: "#E5EBF2",
+                    color: "#FF4601",
+                  },
+                }}
+                onClick={handleCloseLogo}
+              >
+                Đăng xuất
+              </MenuItem>
+            </Menu>
+          </Box>
         </Stack>
       </Stack>
     </Stack>

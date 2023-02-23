@@ -399,7 +399,7 @@ function UserForm() {
                   },
                 }}
               >
-                <Stack direction={"row"} gap={1}>
+                <Stack direction={"row"} gap={1} alignItems="center">
                   {saved ? (
                     <img
                       width={"30px"}

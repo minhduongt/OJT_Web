@@ -4,13 +4,13 @@ import MainNav from "../components/NavBar";
 import MainFooter from "../components/Footer";
 import Router from "../routes";
 
-const Layout = ({ children }) => {
+const Layout = ({ children }, props) => {
   return (
     <Container
       maxWidth="xl"
       sx={{
         backgroundImage: `url(assets/landingPageBg.png)`,
-        minHeight: "4661px",
+        minHeight: props.isMinHeight ? "4661px" : "",
         padding: "0",
       }}
     >
