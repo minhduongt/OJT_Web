@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import PrimaryCarousel from "../components/PrimaryCarousel";
+import { useNavigate } from "react-router-dom";
 
 const CompanyList1 = [
   {
@@ -78,6 +79,7 @@ const CompanyList3 = [
 ];
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Section 1--------- */}
@@ -126,6 +128,7 @@ const LandingPage = () => {
             Tìm kiếm công việc phù hợp với bạn
           </Typography>
           <Button
+            onClick={() => navigate("/jobs")}
             sx={{
               borderRadius: "94px",
               boxShadow: "0px 0px 20px 0px #022C594D",
@@ -133,6 +136,10 @@ const LandingPage = () => {
               height: "100px",
               backgroundColor: "#FF4601",
               color: "#F8FBFF",
+              ":hover": {
+                backgroundColor: "#FF4601",
+                opacity: 0.8,
+              },
             }}
           >
             <Typography fontSize={"32px"} lineHeight="46px">

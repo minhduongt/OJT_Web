@@ -5,6 +5,7 @@ import {
   Container,
   Grid,
   InputBase,
+  Button,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
@@ -20,6 +21,7 @@ import { useState } from "react";
 import Divider from "@mui/material/Divider";
 import { Image } from "@mui/icons-material";
 import { color } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 const CompanyList2 = [
   {
     name: "fpts",
@@ -101,6 +103,7 @@ const CompanyList2 = [
   },
 ];
 const JobsPage = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -224,7 +227,7 @@ const JobsPage = () => {
                       sx={{
                         border: "1px solid #676565",
                         borderRadius: "40px",
-                        color: "#676565",
+                        // color: "#676565",
                         fontSize: "12px",
                         fontWeight: "400",
                         lineHeight: "13px",
@@ -378,22 +381,35 @@ const JobsPage = () => {
                         justifyContent={"center"}
                         alignItems="center"
                       >
-                        <Typography
+                        <Button
+                          onClick={() => navigate("/apply")}
                           sx={{
-                            color: "#676565",
-                            fontSize: "18px",
-                            fontWeight: "400",
-                            lineHeight: "130%",
-                            fontFamily: "SVN-Gilroy",
+                            width: "181px",
+                            height: "40px",
                             border: "2px solid #FF4601",
                             color: "#FF4601",
                             borderRadius: "40px",
+                            ":hover": {
+                              color: "FF4601",
+                            },
                           }}
-                          paddingY="10px"
-                          paddingX="25px"
                         >
-                          Ứng tuyển ngay
-                        </Typography>
+                          <Typography
+                            sx={{
+                              minWidth: "151px",
+                              color: "#FF4601",
+                              fontSize: "18px",
+                              fontWeight: "400",
+                              lineHeight: "130%",
+                              fontFamily: "SVN-Gilroy",
+                            }}
+                            // paddingY="10px"
+                            // paddingX="25px"
+                          >
+                            Ứng tuyển ngay
+                          </Typography>
+                        </Button>
+
                         <Typography
                           sx={{
                             color: "#676565",
