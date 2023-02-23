@@ -192,6 +192,7 @@ const JobsPage = () => {
         container
         spacing={"150px"}
         columns={3}
+        paddingBottom="200px"
       >
         {CompanyList2.map((com) => {
           return (
