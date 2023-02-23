@@ -275,86 +275,9 @@ function ApplyForm() {
         direction={"row"}
         pt="50px"
         px="210px"
-        justifyContent={"space-between"}
+        justifyContent={"center"}
         width="100%"
       >
-        <Stack gap={3} width="480px" alignItems={"center"}>
-          <Box
-            sx={{
-              ":hover": {
-                opacity: 0.8,
-                pointerEvents: "visible",
-              },
-            }}
-            onClick={() => imageUploader.current.click()}
-          >
-            <Avatar
-              alt="Select Avatar"
-              src={"assets/applyUser.png"}
-              sx={{ width: "180px", height: "180px" }}
-              ref={uploadedImage}
-            />
-            <Box
-              sx={{
-                boxShadow: "0px 0px 10px 1px #022C594D",
-                borderRadius: "50%",
-                position: "relative",
-                width: "30px",
-                height: "30px",
-                left: "127px",
-                bottom: "30px",
-              }}
-            >
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                ref={imageUploader}
-                style={{
-                  display: "none",
-                }}
-              />
-              <img
-                src="assets/avatarSelect.png"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  pointerEvents: "all",
-                }}
-              />
-            </Box>
-          </Box>
-          <InputBase
-            sx={{
-              width: "400px",
-              height: "40px",
-              borderRadius: "40px",
-              backgroundColor: "#E5EBF2",
-              fontFamily: "SVN-Gilroy",
-              textAlign: "center",
-              pl: "125px",
-            }}
-            textAlign="center"
-            placeholder="Họ và tên của bạn"
-            value="Trần Nguyễn Văn An"
-          />
-          <InputBase
-            multiline
-            maxRows={5}
-            sx={{
-              width: "400px",
-              minHeight: "40px",
-              borderRadius: "40px",
-              backgroundColor: "#E5EBF2",
-              fontFamily: "SVN-Gilroy",
-              px: "25px",
-            }}
-            placeholder="“Giới thiệu bản thân”"
-            value={
-              "“Lập trình viên SQL với 3 năm kinh nghiệm. Cơ sở dữ liệu được quản lý, tự động hóa được tạo ra, phụ trách thu thập yêu cầu. Có kỹ năng cao trong phát triển năng suất, Oracle và SSIS.”"
-            }
-          />
-        </Stack>
         <Stack gap={3} width="950px">
           <Stack
             width={"100%"}
@@ -441,7 +364,7 @@ function ApplyForm() {
                 maxRows={10}
                 sx={{
                   alignItems: "flex-start",
-                  width: "840px",
+                  width: "700px",
                   height: "379px",
                   minHeight: "40px",
                   borderRadius: "10px",
@@ -495,7 +418,7 @@ function ApplyForm() {
               </Stack>
             </Stack>
           </Stack>
-          <Stack direction="row">
+          <Stack direction="row" px="110px">
             <Button
               onClick={() => navigate("/login")}
               variant="outlined"
@@ -522,7 +445,7 @@ function ApplyForm() {
                 variant="contained"
                 sx={{
                   height: "80px",
-                  width: "330px",
+                  width: "236px",
                   backgroundColor: "#FF4601",
                   color: "#FFFFF",
                   borderRadius: "40px",
@@ -543,12 +466,16 @@ function ApplyForm() {
                   </Typography>
                 </Stack>
               </Button>
+              {/* Dialog popup */}
               <Dialog
                 sx={{
                   width: "1170px",
                   height: "908px",
                   borderRadius: "10px",
-                  boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                  boxShadow: "0px 0px 20px 1px #F8450133",
+                  display: "relative",
+                  left: "20vw",
+                  top: "4vh",
                 }}
                 open={open}
                 onClose={handleClose}
@@ -564,7 +491,7 @@ function ApplyForm() {
                 >
                   Trần Nguyễn Văn An _ Software Developer Intern
                 </Typography>
-                <DialogContent>
+                <DialogContent sx={{ boxShadow: "0px 0px 20px 1px #F8450133" }}>
                   <DialogContentText>
                     <Stack
                       width={"100%"}
@@ -667,18 +594,16 @@ function ApplyForm() {
                           fontSize="18px"
                           fontWeight={"400"}
                         >
-                          Dear HR Department of Schaeffler Vietnam Company
-                          Limited, My name is Trần Nguyễn Văn A, stuyding at FPT
-                          University in Software Engineer major. This is in
-                          reference to the job Software Developer Intern posting
-                          by you. I read the job description and found that my
-                          work experiences as well as my skills and the job
-                          requirements may be a perfect match. I have attached
-                          my CV to this email. I hope you will learn more about
-                          my background, education, achievements, and awards
-                          through my CV. Please feel free to let me know if I
-                          can provide you with any further information. I am
-                          looking forward to hearing from you. Your Sincerely,
+                          Kính gửi phòng nhân sự của công ty TNHH Schaeffler
+                          Việt Nam <br /> Tôi là Trần Nguyễn Văn An, hiện đang
+                          là sinh viên của đại học FPT với chuyên ngành Kỹ thuật
+                          phần mềm. <br /> Theo như mô tả công việc trong phần
+                          tuyển dụng của công ty, tôi tin rằng bản thân có thể
+                          đáp ứng 99% các yêu cầu công việc cho vị trí này, và
+                          đủ tiềm năng để trở thành một thực tập sinh giỏi mà
+                          công ty đang tìm kiếm.
+                          <br /> Tôi có gửi kèm CV theo email này. Rất mong công
+                          ty dành thười gian xem xét. <br /> Trân trọng, <br />{" "}
                           Văn An
                         </Typography>
                       </Stack>
@@ -742,7 +667,6 @@ function ApplyForm() {
                     paddingY={"40px"}
                     paddingRight="425px"
                   >
-                    {" "}
                     <Button
                       onClick={handleClose}
                       variant="outlined"
@@ -764,14 +688,14 @@ function ApplyForm() {
                         fontSize={"20px"}
                         textTransform={"capitalize"}
                       >
-                        Quay lại
+                        Hủy bỏ
                       </Typography>
                     </Button>
                     <Button
                       variant="contained"
                       sx={{
                         height: "80px",
-                        width: "330px",
+                        width: "236px",
                         backgroundColor: "#FF4601",
                         color: "#FFFFF",
                         borderRadius: "40px",

@@ -297,6 +297,7 @@ const LinksHover = () => {
 };
 
 const MainNav = () => {
+  const navigate = useNavigate();
   const [anchorRing, setAnchorRing] = useState(null);
   const [anchorLogo, setAnchorLogo] = useState(null);
   const openRing = Boolean(anchorRing);
@@ -333,8 +334,12 @@ const MainNav = () => {
           width: "178px",
           fontFamily: "SVN-Gilroy",
           alignItems: "center",
+          ":hover": {
+            cursor: "pointer",
+          },
         }}
         direction={"row"}
+        onClick={() => navigate("/")}
       >
         <img
           src={"/assets/Logo.png"}

@@ -6,7 +6,7 @@ import ApplyForm from "../components/ApplyForm";
 const ApplyPage = () => {
   return (
     <Container
-      w="1920px"
+      width="1920px"
       sx={{
         minHeight: "1080px",
         p: 0,
@@ -18,11 +18,11 @@ const ApplyPage = () => {
           paddingTop: "120px",
           justifyContent: "space-between",
           width: "100%",
-          paddingX: "210px",
+          paddingX: "100px",
         }}
       >
         <Typography
-          minWidth={"482px"}
+          minWidth={"272px"}
           color="#FF4601"
           fontSize={"36px"}
           fontWeight={400}
@@ -33,8 +33,8 @@ const ApplyPage = () => {
         <Stack
           height="40px"
           sx={{
-            marginLeft: "68px",
-            width: "950px",
+            marginLeft: "58px",
+            width: "1390px",
             borderBottom: "solid",
             borderColor: "#FF46014D",
             borderWidth: "2px",
