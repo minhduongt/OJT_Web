@@ -143,7 +143,7 @@ const JobsPage = () => {
       >
         <InputBase
           startAdornment={
-            <Box paddingLeft={"30px"} paddingRight={"10px"}>
+            <Box paddingLeft={"40px"} paddingRight={"10px"} pt="3px">
               <img
                 src="/assets/search.png"
                 loading="lazy"
@@ -152,8 +152,11 @@ const JobsPage = () => {
               />
             </Box>
           }
-          placeholder="Tìm kiếm công ty..."
+          placeholder="Tên công việc bạn muốn ứng tuyển..."
           sx={{
+            fontWeight: "300",
+            fontSize: "20px",
+            fontFamily: "Kanit",
             backgroundColor: "white",
             width: "1060px",
             height: "80px",
@@ -161,13 +164,23 @@ const JobsPage = () => {
             boxShadow: "0px 0px 20px 1px rgba(255, 70, 1, 0.3)",
           }}
           id="outlined-adornment-password"
-          type={showPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment position="end">
-              Bộ lọc
-              <Box paddingLeft={"14px"} paddingRight={"70px"}>
+              <Box
+                height={"80px"}
+                borderLeft={"2px solid rgba(103, 101, 101, 0.3)"}
+                pr="10px"
+              ></Box>
+              <Typography
+                fontWeight={"300"}
+                fontSize={"20px"}
+                fontFamily="Kanit"
+              >
+                Bộ lọc
+              </Typography>
+              <Box paddingLeft={"14px"} paddingRight={"70px"} pt="3px">
                 <img
-                  src="/assets/Arrow.png"
+                  src="/assets/FILTER.png"
                   loading="lazy"
                   width={"25px"}
                   height={"25px"}
@@ -181,6 +194,11 @@ const JobsPage = () => {
                 bgcolor={"#FF4601"}
                 color="#F8FBFF"
                 width={"220px"}
+                sx={{
+                  fontFamily: "Dela Gothic One",
+                  fontWeight: "400",
+                  fontSize: "18px",
+                }}
               >
                 Tìm kiếm
               </Box>

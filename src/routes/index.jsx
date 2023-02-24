@@ -12,15 +12,10 @@ import EditProfile from "../pages/EditProfile";
 
 const Router = () => {
   const navigate = useNavigate();
-  const [isFirtLoad, SetIsFirstLoad] = useState(true);
 
   useEffect(() => {
-    if (isFirtLoad) navigate("/login");
-  }, [isFirtLoad]);
-  const FirstLoaded = () => {
-    SetIsFirstLoad(true);
-    console.log("loaded");
-  };
+    navigate("/login");
+  }, []);
 
   return (
     <Routes>
@@ -32,7 +27,7 @@ const Router = () => {
           </Layout>
         }
       />
-      <Route path="/login" element={<LoginPage firstLoaded={FirstLoaded} />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route
         path="/apply"
         element={

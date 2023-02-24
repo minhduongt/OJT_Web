@@ -725,66 +725,88 @@ function ApplyForm() {
                         boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
                       }}
                     >
-                      <Typography
-                        fontFamily={"Dela Gothic One"}
-                        fontSize="36px"
-                        fontWeight={400}
-                        lineHeight="52.13px"
-                        color={"#FF4601"}
-                        pl="40px"
-                        pt="60px"
-                        pr="60px"
+                      {" "}
+                      <Stack
+                        direction={"row"}
+                        sx={{ paddingLeft: "72px", pt: "41px" }}
                       >
-                        XÁC NHẬN ỨNG TUYỂN
-                      </Typography>
-                      <DialogContent>
                         <Typography
-                          fontFamily={"SVN-Gilroy"}
-                          fontSize="18px"
+                          fontFamily={"Dela Gothic One"}
+                          fontSize="36px"
                           fontWeight={400}
-                          lineHeight="27px"
-                          color={"#363534"}
-                          pl="18px"
-                          pr="60px"
+                          lineHeight="52.13px"
+                          color={"#FF4601"}
                         >
-                          Bạn chắc chắn muốn gửi hồ sơ ứng tuyển?
+                          XÁC NHẬN ỨNG TUYỂN
                         </Typography>
-                      </DialogContent>
-                      <DialogActions>
+                        <Box
+                          height="40px"
+                          sx={{
+                            width: "69px",
+                            borderBottom: "solid",
+                            borderColor: "#FF46014D",
+                            borderWidth: "2px",
+                          }}
+                        />
+                      </Stack>
+                      <DialogContent>
                         <Stack
                           direction={"row"}
-                          spacing="20px"
-                          pr={38.5}
-                          pb="50px"
+                          sx={{ paddingLeft: "48px", pt: "10px" }}
                         >
                           <Typography
-                            onClick={handleClose1}
+                            fontFamily={"SVN-Gilroy"}
+                            fontSize="18px"
+                            fontWeight={400}
+                            lineHeight="27px"
+                            color={"#363534"}
+                          >
+                            Bạn chắc chắn muốn gửi hồ sơ ứng tuyển?
+                          </Typography>
+                        </Stack>
+                      </DialogContent>
+                      <Stack pl={"65px"} direction={"row"} pb="49px">
+                        <Button onClick={handleClose1}>
+                          <Typography
                             color={"#FF4601"}
                             border=" 2px solid #FF4601"
                             borderRadius={"40px"}
-                            paddingX="25px"
                             paddingY={"10px"}
+                            fontFamily={"SVN-Gilroy"}
+                            width={"150px"}
+                            fontSize="18px"
+                            fontWeight={"600"}
                           >
                             Thoát
                           </Typography>
+                        </Button>
+                        <Button onClick={handleClickOpen2}>
                           <Typography
-                            color={"#FF4601"}
+                            sx={{ backgroundColor: "#FF4601" }}
+                            color={"white"}
                             border=" 2px solid #FF4601"
                             borderRadius={"40px"}
-                            paddingX="25px"
                             paddingY={"10px"}
-                            onClick={handleClickOpen2}
+                            fontFamily={"SVN-Gilroy"}
+                            width={"150px"}
+                            fontSize="18px"
+                            fontWeight={"600"}
                           >
                             Tiếp tục
                           </Typography>
-                        </Stack>
-                        <Dialog
-                          sx={{
-                            border: "10px",
-                            boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
-                          }}
-                          open={open2}
-                          onClose={handleClose2}
+                        </Button>
+                      </Stack>
+                      <Dialog
+                        sx={{
+                          border: "10px",
+                          boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                        }}
+                        open={open2}
+                        onClose={handleClose2}
+                      >
+                        <Stack
+                          direction={"row"}
+                          sx={{ paddingLeft: "72px", pt: "41px" }}
                         >
                           <Typography
                             fontFamily={"Dela Gothic One"}
@@ -792,43 +814,53 @@ function ApplyForm() {
                             fontWeight={400}
                             lineHeight="52.13px"
                             color={"#FF4601"}
-                            pl="40px"
-                            pt="60px"
-                            pr="60px"
                           >
                             XÁC NHẬN THÀNH CÔNG
                           </Typography>
-                          <DialogContent>
+                          <Box
+                            height="40px"
+                            sx={{
+                              marginLeft: "59px",
+                              width: "405px",
+                              borderBottom: "solid",
+                              borderColor: "#FF46014D",
+                              borderWidth: "2px",
+                            }}
+                          />
+                        </Stack>
+                        <DialogContent>
+                          <Stack
+                            direction={"row"}
+                            sx={{ paddingLeft: "48px", pt: "10px" }}
+                          >
                             <Typography
                               fontFamily={"SVN-Gilroy"}
                               fontSize="18px"
                               fontWeight={400}
                               lineHeight="27px"
                               color={"#363534"}
-                              pl="18px"
-                              pr="60px"
                             >
                               Đơn ứng tuyển của bạn đã được gửi thành công.
                               Thường xuyên kiểm tra email và trang quá trình ứng
-                              tuyển để cập nhật thông tin nhanh chóng.
+                              <br /> tuyển để cập nhật thông tin nhanh chóng.
                             </Typography>
-                          </DialogContent>
-                          <DialogActions>
-                            <Stack direction={"row"} pr={138} pb="50px">
-                              <Typography
-                                onClick={() => navigate("/#")}
-                                color={"#FF4601"}
-                                border="2px solid #FF4601"
-                                borderRadius={"40px"}
-                                paddingX="25px"
-                                paddingY={"10px"}
-                              >
-                                Về trang chủ
-                              </Typography>
-                            </Stack>
-                          </DialogActions>
-                        </Dialog>
-                      </DialogActions>
+                          </Stack>
+                        </DialogContent>
+                        <Stack pl={"72px"} direction={"row"} pb="49px">
+                          <Typography
+                            onClick={() => navigate("/#")}
+                            color={"#FF4601"}
+                            border="2px solid #FF4601"
+                            borderRadius={"40px"}
+                            paddingLeft="25.5px"
+                            paddingY={"10px"}
+                            fontFamily="SVN-Gilroy"
+                            width={"150px"}
+                          >
+                            Về trang chủ
+                          </Typography>
+                        </Stack>
+                      </Dialog>
                     </Dialog>
                   </Stack>
                 </DialogActions>
