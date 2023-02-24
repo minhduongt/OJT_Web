@@ -477,7 +477,7 @@ function ApplyForm() {
                   display: "relative",
                   left: "20vw",
                   top: "4vh",
-                  "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
+                  "& .css-a2pcql-MuiPaper-root-MuiDialog-paper .css-v1jc08": {
                     boxShadow: "0px 0px 20px 1px #F8450133",
                   },
                 }}
@@ -728,9 +728,10 @@ function ApplyForm() {
                       sx={{
                         border: "10px",
 
-                        "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
-                          boxShadow: "0px 0px 20px 1px #F8450133",
-                        },
+                        "& .css-a2pcql-MuiPaper-root-MuiDialog-paper .css-v1jc08":
+                          {
+                            boxShadow: "0px 0px 20px 1px #F8450133",
+                          },
                       }}
                     >
                       {" "}
@@ -807,9 +808,10 @@ function ApplyForm() {
                       <Dialog
                         sx={{
                           border: "10px",
-                          "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
-                            boxShadow: "0px 0px 20px 1px #F8450133",
-                          },
+                          "& .css-a2pcql-MuiPaper-root-MuiDialog-paper .css-v1jc08":
+                            {
+                              boxShadow: "0px 0px 20px 1px #F8450133",
+                            },
                         }}
                         open={open2}
                         onClose={handleClose2}
