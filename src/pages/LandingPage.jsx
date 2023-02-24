@@ -571,19 +571,19 @@ const LandingPage = () => {
           <Avatar
             sx={{ width: "180px", height: "180px" }}
             alt="HuynhDangKhoi"
-            src="../assets/nguyenquockhanh.png"
+            src="../assets/Ngan.png"
           />
           <Stack>
             <Typography
               width={"196px"}
-              color="#022C59"
+              color="#022C59" 
               fontSize={"32px"}
               lineHeight="130%"
             >
-              Nguyễn Quốc Khánh
+              Nguyễn Thị Hồng Ngân
             </Typography>
             <Typography fontSize={"18px"} lineHeight="150%">
-              SE150835
+              SE160523
             </Typography>
           </Stack>
         </Stack>
