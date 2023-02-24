@@ -48,7 +48,7 @@ const Router = () => {
       <Route
         path="/jobs"
         element={
-          <Layout>
+          <Layout maxHeight={"3830px"}>
             <JobsPage />
           </Layout>
         }
@@ -56,7 +56,7 @@ const Router = () => {
       <Route
         path="/companies"
         element={
-          <Layout>
+          <Layout maxHeight={"3277px"}>
             <CompaniesPage />
           </Layout>
         }
