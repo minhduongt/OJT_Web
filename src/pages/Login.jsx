@@ -100,7 +100,6 @@ const LoginPage = (props) => {
             <Button
               onClick={() => {
                 navigate("/profile");
-                props.firstLoaded();
               }}
               variant="contained"
               sx={{
