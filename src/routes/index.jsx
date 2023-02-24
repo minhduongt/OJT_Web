@@ -22,7 +22,7 @@ const Router = () => {
       <Route
         path="/"
         element={
-          <Layout isMinHeight={true}>
+          <Layout>
             <LandingPage />
           </Layout>
         }
@@ -31,7 +31,7 @@ const Router = () => {
       <Route
         path="/apply"
         element={
-          <Layout isMinHeight={false}>
+          <Layout formLayout={"assets/profileBg.png"}>
             <ApplyPage />
           </Layout>
         }
@@ -40,7 +40,7 @@ const Router = () => {
       <Route
         path="/editprofile"
         element={
-          <Layout isMinHeight={false}>
+          <Layout formLayout={"assets/profileBg.png"}>
             <EditProfile />
           </Layout>
         }
@@ -48,7 +48,7 @@ const Router = () => {
       <Route
         path="/jobs"
         element={
-          <Layout isMinHeight={false}>
+          <Layout>
             <JobsPage />
           </Layout>
         }
@@ -56,7 +56,7 @@ const Router = () => {
       <Route
         path="/companies"
         element={
-          <Layout isMinHeight={false}>
+          <Layout>
             <CompaniesPage />
           </Layout>
         }

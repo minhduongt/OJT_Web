@@ -9,7 +9,7 @@ const EditProfile = () => {
       w="1920px"
       sx={{
         minHeight: "1080px",
-        backgroundImage: `url(assets/profileBg.png)`,
+        // backgroundImage: `url(assets/profileBg.png)`,
         p: 0,
       }}
     >
@@ -42,7 +42,7 @@ const EditProfile = () => {
           }}
         />
       </Stack>
-      <Stack pb="200px">
+      <Stack pb="140px">
         <EditForm />
       </Stack>
     </Container>

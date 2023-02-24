@@ -44,6 +44,7 @@ const ProfilePage = () => {
         />
       </Stack>
       <UserForm />
+      <Stack pb="210px" />
     </Container>
   );
 };

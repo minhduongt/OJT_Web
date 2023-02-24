@@ -51,40 +51,17 @@
   border-radius: 30px;
   position: relative;
   }
-    .slideright{
-    transform: scale(0.8);
-    transition: transform 300ms;
-    z-index: 50;
-    position: relative;
-  /* right: -30px */
-    }
 
   .slide{
-    transform: scaleX(0.6) scaleY(0.8);
+    transform: scaleX(0.5) scaleY(0.85);
     transition: transform 300ms;
     z-index: 50;
     position: relative;
-
+    left: 100px;
   }
 
-  .slideleft{
-  transform: scale(0.8);
-  transition: transform 300ms;
-  z-index: 50;
-  position: relative;
-  left: 100px
-  }
-
-  .slideright{
-    transform: scale(0.8);
-    transition: transform 300ms;
-    z-index: 50;
-    position: relative;
-  right: 0px
-    }
-  
-.slidesouter{
-  transform: scaleX(0.3) scaleY(0.6);
+.slideouter{
+  transform: scaleX(1) scaleY(0.65);
   transition: transform 300ms;
   position: relative;
   z-index: 2;
@@ -93,6 +70,7 @@
 
 .activeSlide{
   transform: scale(1.0);
+  transition: transform 300ms;
   opacity: 1;
   z-index: 99;
   position: relative;

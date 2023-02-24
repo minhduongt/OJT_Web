@@ -9,7 +9,7 @@ const ApplyPage = () => {
       width="1920px"
       sx={{
         minHeight: "1080px",
-        backgroundImage: `url(assets/profileBg.png)`,
+        // backgroundImage: `url(assets/profileBg.png)`,
         p: 0,
       }}
     >
@@ -42,7 +42,7 @@ const ApplyPage = () => {
           }}
         />
       </Stack>
-      <Stack pb="200px">
+      <Stack pb="224px">
         {" "}
         <ApplyForm />
       </Stack>

@@ -49,8 +49,102 @@ export default function PrimaryCarousel() {
     dotsClass: styles.dots_bar,
     beforeChange: (current, next) => {
       setImgIndex(next);
+      console.log("current slide", next);
     },
   };
+
+  function GetClassForSlides(idx, imgIndex) {
+    // case 0
+    if (imgIndex === 0) {
+      if (idx === 0) {
+        return "activeSlide";
+      }
+      if (idx === 1) {
+        return "slide";
+      }
+      if (idx === 2) {
+        return "slideouter";
+      }
+      if (idx === 3) {
+        return "slideouter";
+      }
+      if (idx === 4) {
+        return "slide";
+      }
+    }
+    // case 1
+    if (imgIndex === 1) {
+      if (idx === 0) {
+        return "slide";
+      }
+      if (idx === 1) {
+        return "activeSlide";
+      }
+      if (idx === 2) {
+        return "slide";
+      }
+      if (idx === 3) {
+        return "slideouter";
+      }
+      if (idx === 4) {
+        return "slideouter";
+      }
+    }
+    // case 2
+    if (imgIndex === 2) {
+      if (idx === 0) {
+        return "slideouter";
+      }
+      if (idx === 1) {
+        return "slide";
+      }
+      if (idx === 2) {
+        return "activeSlide";
+      }
+      if (idx === 3) {
+        return "slide";
+      }
+      if (idx === 4) {
+        return "slideouter";
+      }
+    }
+    // case 3
+    if (imgIndex === 3) {
+      if (idx === 0) {
+        return "slideouter";
+      }
+      if (idx === 1) {
+        return "slideouter";
+      }
+      if (idx === 2) {
+        return "slide";
+      }
+      if (idx === 3) {
+        return "activeSlide";
+      }
+      if (idx === 4) {
+        return "slide";
+      }
+    }
+    // case 4
+    if (imgIndex === 4) {
+      if (idx === 0) {
+        return "slide";
+      }
+      if (idx === 1) {
+        return "slideouter";
+      }
+      if (idx === 2) {
+        return "slideouter";
+      }
+      if (idx === 3) {
+        return "slide";
+      }
+      if (idx === 4) {
+        return "activeSlide";
+      }
+    }
+  }
   return (
     <Box overflow={"hidden"}>
       {/* CSS files for react-slick */}
@@ -68,28 +162,30 @@ export default function PrimaryCarousel() {
 
       {/* Slider */}
 
-      <Box pt="30px" pl={"200px"} pr="150px" width="1800px" overflow={"hidden"}>
+      <Box pt="30px" pl={"180px"} pr="140px" width="1800px" overflow={"hidden"}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {imgList.map((img, idx) => {
             return (
               <Box
-                ml="-100px"
+                ml="-80px"
                 className={
-                  idx === imgIndex
-                    ? "slide activeSlide"
-                    : idx - 1 === imgIndex ||
-                      idx + 1 === imgIndex ||
-                      (idx === 0 && imgIndex > 0) ||
-                      (idx === imgList.length - 1 && imgIndex === 0)
-                    ? // idx === imgIndex - 1 ||
-                      //   (imgIndex === 0 && idx === imgList.length)
-                      //   ? "slideleft"
-                      //   : idx === imgIndex + 1 ||
-                      //     (idx === 0 && imgIndex === imgList.length)
-                      //   ? "slideright"
-                      // :
-                      "slide"
-                    : "slidesouter"
+                  GetClassForSlides(idx, imgIndex)
+                  // idx === imgIndex
+                  //   ? "activeSlide"
+                  //   : idx - 1 === imgIndex ||
+                  //     idx + 1 === imgIndex ||
+                  //     (idx === 0 && imgIndex > 0) ||
+                  //     (idx === imgList.length - 1 && imgIndex === 0)
+                  //   ?
+                  // idx === imgIndex - 1 ||
+                  //   (imgIndex === 0 && idx === imgList.length)
+                  //   ? "slideleft"
+                  //   : idx === imgIndex + 1 ||
+                  //     (idx === 0 && imgIndex === imgList.length)
+                  //   ? "slideright"
+                  // :
+                  //   "slide"
+                  // : "slidesouter"
                 }
               >
                 <img width={"835px"} height="568px" src={img.image} />

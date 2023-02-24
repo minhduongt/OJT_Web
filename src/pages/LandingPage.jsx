@@ -282,17 +282,19 @@ const LandingPage = () => {
       </Container>
 
       {/* Section 3--------- */}
-      <Stack direction={"row"} sx={{ paddingTop: "120px", paddingX: "100px" }}>
+      <Stack direction={"row"} sx={{ paddingTop: "20px", paddingX: "100px" }}>
         <Typography
           minWidth={"474px"}
           color="#FF4601"
           fontSize={"36px"}
           fontWeight={400}
+          height="52px"
         >
           TÍNH NĂNG NỔI BẬT
         </Typography>
         <Box
           sx={{
+            height: "52px",
             marginLeft: "59px",
             width: "1390px",
             borderBottom: "solid",
@@ -608,7 +610,7 @@ const LandingPage = () => {
           <Stack>
             <Typography
               width={"196px"}
-              color="#022C59" 
+              color="#022C59"
               fontSize={"32px"}
               lineHeight="130%"
             >
