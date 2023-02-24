@@ -466,32 +466,38 @@ function ApplyForm() {
                   </Typography>
                 </Stack>
               </Button>
-              {/* Dialog popup */}
+              {/* Dialog popup 1 */}
+
               <Dialog
                 sx={{
                   width: "1170px",
                   height: "908px",
                   borderRadius: "10px",
-                  boxShadow: "0px 0px 20px 1px #F8450133",
+
                   display: "relative",
                   left: "20vw",
                   top: "4vh",
+                  "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
+                    boxShadow: "0px 0px 20px 1px #F8450133",
+                  },
                 }}
                 open={open}
                 onClose={handleClose}
               >
-                <Typography
-                  fontFamily={"Dela Gothic One"}
-                  fontSize="32px"
-                  fontWeight={400}
-                  color={"#022C59"}
-                  pt={"43px"}
-                  pl="110px"
-                  width={"100%"}
-                >
-                  Trần Nguyễn Văn An _ Software Developer Intern
-                </Typography>
-                <DialogContent sx={{ boxShadow: "0px 0px 20px 1px #F8450133" }}>
+                <Stack pt="44px"></Stack>
+                <DialogContent>
+                  <Typography
+                    fontFamily={"Dela Gothic One"}
+                    fontSize="32px"
+                    fontWeight={400}
+                    color={"#022C59"}
+                    // pt={"43px"}
+                    pl="100px"
+                    pb="60px"
+                    width={"100%"}
+                  >
+                    Trần Nguyễn Văn An _ Software Developer Intern
+                  </Typography>
                   <DialogContentText>
                     <Stack
                       width={"100%"}
@@ -659,13 +665,11 @@ function ApplyForm() {
                       </Stack>
                     </Stack>
                   </DialogContentText>
-                </DialogContent>
-                <DialogActions>
                   <Stack
                     direction={"row"}
                     spacing="40px"
                     paddingY={"40px"}
-                    paddingRight="425px"
+                    px="110px"
                   >
                     <Button
                       onClick={handleClose}
@@ -717,12 +721,16 @@ function ApplyForm() {
                         </Typography>
                       </Stack>
                     </Button>
+                    {/* Dialog 3 */}
                     <Dialog
                       open={open1}
                       onClose={handleClose1}
                       sx={{
                         border: "10px",
-                        boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+
+                        "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
+                          boxShadow: "0px 0px 20px 1px #F8450133",
+                        },
                       }}
                     >
                       {" "}
@@ -799,7 +807,9 @@ function ApplyForm() {
                       <Dialog
                         sx={{
                           border: "10px",
-                          boxShadow: "0px 0px 20px 1px rgba(248, 69, 1, 0.2)",
+                          "& .css-a2pcql-MuiPaper-root-MuiDialog-paper": {
+                            boxShadow: "0px 0px 20px 1px #F8450133",
+                          },
                         }}
                         open={open2}
                         onClose={handleClose2}
@@ -863,7 +873,7 @@ function ApplyForm() {
                       </Dialog>
                     </Dialog>
                   </Stack>
-                </DialogActions>
+                </DialogContent>
               </Dialog>
             </Box>
           </Stack>
