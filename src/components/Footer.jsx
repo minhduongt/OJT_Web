@@ -60,6 +60,7 @@ const MainFooter = () => {
               fontSize={"16px"}
               lineHeight="150%"
               fontWeight={600}
+              color="#676565"
             >
               Địa chỉ:
             </Typography>
@@ -68,6 +69,7 @@ const MainFooter = () => {
               maxWidth={"337px"}
               fontSize={"14px"}
               lineHeight="150%"
+              color="#676565"
             >
               Lô E2a-7, Đường D1 Khu Công nghệ cao, phường Long Thạnh Mỹ, thành
               phố Thủ Đức, thành phố Hồ Chí Minh
@@ -79,6 +81,7 @@ const MainFooter = () => {
               fontSize={"16px"}
               lineHeight="150%"
               fontWeight={600}
+              color="#676565"
             >
               Email:
             </Typography>
@@ -87,6 +90,7 @@ const MainFooter = () => {
               maxWidth={"337px"}
               fontSize={"14px"}
               lineHeight="150%"
+              color="#676565"
             >
               qhdn.fuhcm@fe.edu.vn
             </Typography>
@@ -97,6 +101,7 @@ const MainFooter = () => {
               fontSize={"16px"}
               lineHeight="150%"
               fontWeight={600}
+              color="#676565"
             >
               Số điện thoại:
             </Typography>
@@ -105,6 +110,7 @@ const MainFooter = () => {
               maxWidth={"337px"}
               fontSize={"14px"}
               lineHeight="150%"
+              color="#676565"
             >
               0934-177-713
             </Typography>
@@ -114,17 +120,20 @@ const MainFooter = () => {
           direction={"column"}
           alignContent="center"
           justifyContent={"center"}
+          // pr="90px"
         >
           <Typography
             width={"400px"}
             fontFamily="SVN-Gilroy"
             fontSize={"16px"}
             fontWeight={600}
+            color="#676565"
+            textAlign={"center"}
           >
             Nhập email của bạn để nhận thông báo nhanh nhất
           </Typography>
           <Stack
-            width={"400px"}
+            // width={"400px"}
             paddingTop={"20px"}
             direction={"row"}
             alignItems="center"
@@ -137,6 +146,8 @@ const MainFooter = () => {
                 backgroundColor: "#E5EBF2",
                 fontFamily: "SVN-Gilroy",
                 px: "30px",
+                fontStyle: "italic",
+                fontWeight: "300",
               }}
               placeholder="sample@fpt.edu.vn"
             />
@@ -144,7 +155,7 @@ const MainFooter = () => {
             <Button
               sx={{
                 position: "relative",
-                right: "40px",
+                right: "100px",
                 height: "40px",
                 width: "111px",
                 borderRadius: "40px",
@@ -156,9 +167,10 @@ const MainFooter = () => {
                 fontFamily="SVN-Gilroy"
                 fontWeight={500}
                 fontSize="16px"
+                fontStyle="normal"
                 textTransform={"capitalize"}
               >
-                Đăng ký
+                {"Đăng ký"}
               </Typography>
             </Button>
           </Stack>

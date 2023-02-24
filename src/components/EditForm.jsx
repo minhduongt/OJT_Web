@@ -142,7 +142,7 @@ function EditForm() {
     SetSaved(true);
     setTimeout(() => {
       navigate("/apply");
-    }, 1000);
+    }, 500);
   };
 
   const handleImageUpload = async (e) => {

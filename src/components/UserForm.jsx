@@ -142,7 +142,7 @@ function UserForm() {
     SetSaved(true);
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 500);
   };
 
   const handleImageUpload = async (e) => {

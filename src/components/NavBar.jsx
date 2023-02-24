@@ -124,6 +124,9 @@ const LinksHover = () => {
           >
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -132,6 +135,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={handleClose}
@@ -141,6 +145,9 @@ const LinksHover = () => {
             <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -149,6 +156,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={handleClose}
@@ -191,6 +199,9 @@ const LinksHover = () => {
           >
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -199,6 +210,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={(handleClose2) => navigate("/companies")}
@@ -208,6 +220,9 @@ const LinksHover = () => {
             <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -216,6 +231,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={(handleClose2) => navigate("/jobs")}
@@ -258,6 +274,9 @@ const LinksHover = () => {
           >
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -266,6 +285,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={handleClose3}
@@ -275,6 +295,9 @@ const LinksHover = () => {
             <Divider sx={{ border: "2px solid rgba(255, 70, 1, 0.3)" }} />
             <MenuItem
               sx={{
+                my: "-8px",
+                height: "60px",
+                width: "200px",
                 fontFamily: "SVN-Gilroy",
                 fontWeight: "400",
                 fontSize: "20px",
@@ -283,6 +306,7 @@ const LinksHover = () => {
                 ":hover": {
                   backgroundColor: "#E5EBF2",
                   color: "#FF4601",
+                  fontWeight: "500",
                 },
               }}
               onClick={handleClose3}
@@ -323,10 +347,10 @@ const MainNav = () => {
         justifyContent: "space-between",
         minHeight: "120px",
         alignItems: "center",
-        border: "solid",
-        borderColor: "#000000",
-        borderWidth: "1px",
-        boxShadow: "0px 4px 4px 0px #00000040",
+        // border: "solid",
+        // borderColor: "#000000",
+        // borderWidth: "1px",
+        // boxShadow: "0px 4px 4px 0px #00000040",
       }}
     >
       <Stack
@@ -462,7 +486,7 @@ const MainNav = () => {
             </Box>
 
             <Menu
-              sx={{ display: "relative", top: "40px" }}
+              sx={{ display: "relative", top: "50px" }}
               id="fade-menu"
               MenuListProps={{
                 "aria-labelledby": "fade-button",

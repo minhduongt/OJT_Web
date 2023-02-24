@@ -7,6 +7,7 @@ const ProfilePage = () => {
     <Container
       w="1920px"
       sx={{
+        backgroundImage: `url(assets/profileBg.png)`,
         minHeight: "1080px",
         p: 0,
       }}

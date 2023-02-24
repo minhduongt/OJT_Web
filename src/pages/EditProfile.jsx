@@ -9,6 +9,7 @@ const EditProfile = () => {
       w="1920px"
       sx={{
         minHeight: "1080px",
+        backgroundImage: `url(assets/profileBg.png)`,
         p: 0,
       }}
     >

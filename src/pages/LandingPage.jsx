@@ -108,9 +108,14 @@ const LandingPage = () => {
         sx={{
           marginTop: "200px",
           height: "755px",
-          backgroundImage: `url(assets/fptu.png)`,
+          // backgroundImage: `url(assets/fptu.png)`,
+          // backgroundRepeat: "no-repeat",
         }}
       >
+        <img
+          src="assets/fptu.png"
+          style={{ position: "absolute", width: "100%" }}
+        />
         <Stack
           spacing={3}
           direction={"column"}
@@ -154,6 +159,7 @@ const LandingPage = () => {
             width: "1360px",
             height: "200px",
             backgroundColor: "#FFFFFF",
+            borderRadius: "20px",
             // border: "solid",
             // borderColor: "#FF4601",
             // borderWidth: "4px",
@@ -389,7 +395,10 @@ const LandingPage = () => {
         </Stack>
       </Stack>
       {/* Section 4--------- */}
-      <Stack direction={"row"} sx={{ paddingTop: "120px", paddingX: "100px" }}>
+      <Stack
+        direction={"row"}
+        sx={{ maxHeight: "40px", paddingTop: "147px", paddingX: "100px" }}
+      >
         <Box
           sx={{
             marginRight: "59px",
@@ -397,11 +406,10 @@ const LandingPage = () => {
             borderBottom: "solid",
             borderColor: "#FF46014D",
             borderWidth: "2px",
+            height: "40px",
           }}
-          height="40px"
         />
         <Typography
-          paddingTop="100px"
           minWidth="590px"
           color="#FF4601"
           fontSize={"36px"}

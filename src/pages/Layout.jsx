@@ -9,11 +9,16 @@ const Layout = ({ children }, props) => {
     <Container
       maxWidth="xl"
       sx={{
-        backgroundImage: `url(assets/landingPageBg.png)`,
-        minHeight: props.isMinHeight ? "4661px" : "",
+        // backgroundImage: `url(assets/landingPageBg.png)`,
+        // backgroundRepeat: "no-repeat",
+        maxHeight: "4521px",
         padding: "0",
       }}
     >
+      <img
+        src="assets/landingPageBg.png"
+        style={{ position: "absolute", width: "100%" }}
+      />
       <MainNav />
 
       {children}

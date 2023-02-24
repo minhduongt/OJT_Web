@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -57,7 +60,7 @@
     }
 
   .slide{
-    transform: scaleX(0.6) scaleY(0.6);
+    transform: scaleX(0.6) scaleY(0.8);
     transition: transform 300ms;
     z-index: 50;
     position: relative;
@@ -81,7 +84,7 @@
     }
   
 .slidesouter{
-  transform: scaleX(0.3) scaleY(0.3);
+  transform: scaleX(0.3) scaleY(0.6);
   transition: transform 300ms;
   position: relative;
   z-index: 2;

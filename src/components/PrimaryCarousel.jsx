@@ -68,7 +68,7 @@ export default function PrimaryCarousel() {
 
       {/* Slider */}
 
-      <Box pt="30px" pl={"200px"} pr="430px" width="2000px" overflow={"hidden"}>
+      <Box pt="30px" pl={"200px"} pr="150px" width="1800px" overflow={"hidden"}>
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {imgList.map((img, idx) => {
             return (
