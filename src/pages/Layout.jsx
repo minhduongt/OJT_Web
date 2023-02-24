@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import MainNav from "../components/NavBar";
 import MainFooter from "../components/Footer";
@@ -17,13 +17,15 @@ const Layout = ({ children }, props) => {
     >
       <img
         src="assets/landingPageBg.png"
-        style={{ position: "absolute", width: "100%" }}
+        style={{ position: "absolute", width: "100%", zIndex: "1" }}
       />
-      <MainNav />
+      <Box sx={{ position: "relative", zIndex: "99" }}>
+        <MainNav />
 
-      {children}
+        {children}
 
-      <MainFooter />
+        <MainFooter />
+      </Box>
     </Container>
   );
 };

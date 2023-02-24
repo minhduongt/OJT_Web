@@ -420,7 +420,7 @@ const LandingPage = () => {
           DOANH NGHIỆP LIÊN KẾT
         </Typography>
       </Stack>
-      <Stack mb={"-400px"} alignItems={"center"}>
+      <Stack pt="60px" mb={"-400px"} alignItems={"center"}>
         <Typography
           lineHeight={"150%"}
           paddingTop="90px"
@@ -434,8 +434,32 @@ const LandingPage = () => {
           Liên kết hơn 40 doanh nghiệp, tạo cơ hội tìm kiếm công việc thực tập
           cho sinh viên FPT
         </Typography>
-
-        <Stack paddingTop={"80px"} direction={"row"} spacing={4}>
+        <Stack
+          height={"23px"}
+          paddingTop={"80px"}
+          paddingBottom="40px"
+          width={"100%"}
+          alignItems="flex-end"
+          px="330px"
+        >
+          <Typography
+            color="#676565"
+            fontSize={"18px"}
+            fontWeight={"300"}
+            fontStyle={"italic"}
+            fontFamily="SVN-Gilroy"
+            onClick={() => navigate("/companies")}
+            sx={{
+              ":hover": {
+                cursor: "pointer",
+                fontWeight: "400",
+              },
+            }}
+          >
+            Xem thêm các công ty
+          </Typography>
+        </Stack>
+        <Stack direction={"row"} spacing={4}>
           {CompanyList1.map((com) => {
             return (
               <Box
