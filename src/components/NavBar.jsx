@@ -3,45 +3,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-const StyledMenu = styled((props) => (
-  <Menu
-    elevation={0}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "right",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "right",
-    }}
-    {...props}
-  />
-))(({ theme }) => ({
-  "& .MuiPaper-root": {
-    borderRadius: 6,
-    marginTop: theme.spacing(1),
-    minWidth: "220px",
-    color: "grey",
-    borderColor: "#FF4601",
-    boxShadow: " 0px 0px 10px 1px rgba(255, 70, 1, 0.15)",
-    "& .MuiMenu-list": {
-      padding: "4px 0",
-    },
-    "& .MuiMenuItem-root": {
-      "& .MuiSvgIcon-root": {
-        fontSize: 18,
-        color: "#FF4601",
-        marginRight: theme.spacing(1.5),
-      },
-      "&:active": {
-        backgroundColor: "#FF4601",
-      },
-    },
-  },
-}));
+import { useLocation, useNavigate } from "react-router-dom";
+
 const HoverText = styled(Typography)(({ theme }) => ({
   fontFamily: "SVN-Gilroy",
   fontSize: "24px",
@@ -56,6 +21,7 @@ const HoverText = styled(Typography)(({ theme }) => ({
 
 const LinksHover = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorE2, setAnchorE2] = useState(null);
   const [anchorE3, setAnchorE3] = useState(null);
@@ -80,6 +46,10 @@ const LinksHover = () => {
   const handleClose3 = (event) => {
     setAnchorE3(null);
   };
+
+  useEffect(() => {
+    console.log("location", location);
+  }, [location]);
   return (
     <>
       <Stack
@@ -98,7 +68,12 @@ const LinksHover = () => {
               fontWeight: "400",
               fontSize: "24px",
               lineHeight: "25px",
-              color: open ? "#FF4601" : "",
+              color:
+                open ||
+                location.pathname.includes("/process") ||
+                location.pathname.includes("/about")
+                  ? "#FF4601"
+                  : "",
             }}
           >
             Giới thiệu
@@ -138,7 +113,10 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                navigate("/about");
+              }}
             >
               Tổng quan OJT
             </MenuItem>
@@ -159,7 +137,10 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                navigate("/process");
+              }}
             >
               Quy trình OJT
             </MenuItem>
@@ -173,7 +154,12 @@ const LinksHover = () => {
               fontWeight: "400",
               fontSize: "24px",
               lineHeight: "25px",
-              color: open2 ? "#FF4601" : "",
+              color:
+                open2 ||
+                location.pathname.includes("/jobs") ||
+                location.pathname.includes("/companies")
+                  ? "#FF4601"
+                  : "",
             }}
           >
             Việc làm
@@ -213,7 +199,7 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={(handleClose2) => navigate("/companies")}
+              onClick={() => navigate("/companies")}
             >
               Công ty
             </MenuItem>
@@ -234,7 +220,7 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={(handleClose2) => navigate("/jobs")}
+              onClick={() => navigate("/jobs")}
             >
               Công việc
             </MenuItem>
@@ -248,7 +234,12 @@ const LinksHover = () => {
               fontWeight: "400",
               fontSize: "24px",
               lineHeight: "25px",
-              color: open3 ? "#FF4601" : "",
+              color:
+                open3 ||
+                location.pathname.includes("/notifications") ||
+                location.pathname.includes("/issues")
+                  ? "#FF4601"
+                  : "",
             }}
           >
             Quản lý OJT
@@ -288,7 +279,7 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={handleClose3}
+              onClick={() => navigate("/notifications")}
             >
               Thông báo OJT
             </MenuItem>
@@ -309,7 +300,7 @@ const LinksHover = () => {
                   fontWeight: "500",
                 },
               }}
-              onClick={handleClose3}
+              onClick={() => navigate("/issues")}
             >
               Các vấn đề OJT
             </MenuItem>

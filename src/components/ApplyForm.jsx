@@ -857,18 +857,23 @@ function ApplyForm() {
                           </Stack>
                         </DialogContent>
                         <Stack pl={"72px"} direction={"row"} pb="49px">
-                          <Typography
-                            onClick={() => navigate("/#")}
-                            color={"#FF4601"}
-                            border="2px solid #FF4601"
-                            borderRadius={"40px"}
+                          <Button
+                            sx={{
+                              border: "2px solid #FF4601",
+                              borderRadius: "40px",
+                            }}
                             paddingLeft="25.5px"
                             paddingY={"10px"}
-                            fontFamily="SVN-Gilroy"
                             width={"150px"}
+                            onClick={() => navigate("/")}
                           >
-                            Về trang chủ
-                          </Typography>
+                            <Typography
+                              color={"#FF4601"}
+                              fontFamily="SVN-Gilroy"
+                            >
+                              Về trang chủ
+                            </Typography>
+                          </Button>
                         </Stack>
                       </Dialog>
                     </Dialog>

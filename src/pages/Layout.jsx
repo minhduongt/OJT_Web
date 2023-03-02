@@ -4,7 +4,7 @@ import MainNav from "../components/NavBar";
 import MainFooter from "../components/Footer";
 import Router from "../routes";
 
-const Layout = ({ children }, props) => {
+const Layout = ({ children, height, maxHeight, formLayout }, props) => {
   return (
     <Container
       maxWidth="xl"
@@ -16,8 +16,14 @@ const Layout = ({ children }, props) => {
       }}
     >
       <img
-        src="assets/landingPageBg.png"
-        style={{ position: "absolute", width: "100%", zIndex: "1" }}
+        src={formLayout ? formLayout : "assets/landingPageBg.png"}
+        style={{
+          position: "absolute",
+          width: "100%",
+          zIndex: "1",
+          height: height ? height : "",
+          maxHeight: maxHeight ? maxHeight : "",
+        }}
       />
       <Box sx={{ position: "relative", zIndex: "99" }}>
         <MainNav />

@@ -9,6 +9,10 @@ import LandingPage from "../pages/LandingPage";
 import Page404 from "../pages/Page404";
 import Layout from "../pages/Layout";
 import EditProfile from "../pages/EditProfile";
+import AboutPage from "../pages/AboutPage";
+import ProcessPage from "../pages/ProcessPage";
+import IssuePage from "../pages/IssuePage";
+import NotiPage from "../pages/NotiPage";
 
 const Router = () => {
   const navigate = useNavigate();
@@ -27,11 +31,35 @@ const Router = () => {
           </Layout>
         }
       />
+      <Route
+        path="/about"
+        element={
+          <Layout formLayout={"assets/profileBg.png"} height={"2006px"}>
+            <AboutPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/process"
+        element={
+          <Layout formLayout={"assets/profileBg.png"} height={"2006px"}>
+            <ProcessPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <LandingPage />
+          </Layout>
+        }
+      />
       <Route path="/login" element={<LoginPage />} />
       <Route
         path="/apply"
         element={
-          <Layout isMinHeight={false}>
+          <Layout formLayout={"assets/profileBg.png"} height={"1400px"}>
             <ApplyPage />
           </Layout>
         }
@@ -40,7 +68,7 @@ const Router = () => {
       <Route
         path="/editprofile"
         element={
-          <Layout isMinHeight={false}>
+          <Layout formLayout={"assets/profileBg.png"} height={"1400px"}>
             <EditProfile />
           </Layout>
         }
@@ -58,6 +86,22 @@ const Router = () => {
         element={
           <Layout isMinHeight={false}>
             <CompaniesPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/notifications"
+        element={
+          <Layout formLayout={"assets/profileBg.png"} height={"1539px"}>
+            <NotiPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/issues"
+        element={
+          <Layout formLayout={"assets/profileBg.png"} height={"2473px"}>
+            <IssuePage />
           </Layout>
         }
       />
