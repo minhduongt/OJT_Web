@@ -4,8 +4,7 @@ import MainNav from "../components/NavBar";
 import MainFooter from "../components/Footer";
 import Router from "../routes";
 
-const Layout = ({ children, formLayout, maxHeight }, props) => {
-  console.log("formLayout", formLayout);
+const Layout = ({ children, height, maxHeight, formLayout }, props) => {
   return (
     <Container
       maxWidth="xl"
@@ -22,7 +21,7 @@ const Layout = ({ children, formLayout, maxHeight }, props) => {
           position: "absolute",
           width: "100%",
           zIndex: "1",
-          height: formLayout ? "1400px" : "",
+          height: height ? height : "",
           maxHeight: maxHeight ? maxHeight : "",
         }}
       />

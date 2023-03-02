@@ -9,12 +9,20 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const MainFooter = () => {
+  const navigate = useNavigate();
   return (
     <Container
       maxWidth="xl"
-      sx={{ padding: "0", bgcolor: "#FFF9F4v", minHeight: "290px" }}
+      sx={{
+        // position: "absolute",
+        // bottom: "0px",
+        padding: "0",
+        backgroundImage: `url('assets/footerBg.png')`,
+        minHeight: "290px",
+      }}
     >
       <Stack paddingX={"100px"} direction={"row"} justifyContent="center">
         <Box
